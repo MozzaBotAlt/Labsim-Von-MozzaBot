@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     tabLinks.forEach(link => {
         link.addEventListener("click", function (e) {
-            const targetId = this.getAttribute("href").replace("#", "");
+            const targetId = this.getAttribute("href").replace("/index.html", "");
             if (document.getElementById(targetId)) {
                 e.preventDefault();
                 showTab(targetId);
@@ -42,4 +42,5 @@ document.addEventListener("DOMContentLoaded", function () {
             c.style.transition = "opacity 0.5s";
         });
     }
+
 });

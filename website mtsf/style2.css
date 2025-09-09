@@ -8,7 +8,8 @@ body, h1, h2, h3, p, ul, li, a, button {
 
 /* Body background and text */
 body {
-    background: linear-gradient(120deg, #a35c91 50%, #1092ef 50%);
+    /* background: linear-gradient(120deg, #a35c91 50%, #1092ef 50%); */
+    background: #000000;
     color: #222;
     min-height: 100vh;
     line-height: 1.6;

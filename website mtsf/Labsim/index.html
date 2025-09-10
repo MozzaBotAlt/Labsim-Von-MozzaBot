@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Keywords" content="HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Colors, W3.CSS, XML, MySQL, Icons, NodeJS, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="/style2.css">
-    <!-- <link rel="icon" href="" type="image/x-icon"> -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/images.webp" type="image/x-icon">
     <title>Homepage Lab Sim</title>
+
+    <!-- Load React and ReactDOM from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
 </head>
 <body>
     <p>Homepage Lab Sim</p>
@@ -25,6 +30,16 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <audio src="https://www.youtube.com/watch?v=3mzuFCir6bg&list=RD3mzuFCir6bg&start_radio=1" autoplay loop></audio>
+
+    <div id="output"></div>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Your custom script here -->
+    <script type="text/babel">
+    const getMessage = () => "Hello World";
+    document.getElementById('output').innerHTML = getMessage();
+    </script>
 </body>
 </html>
 

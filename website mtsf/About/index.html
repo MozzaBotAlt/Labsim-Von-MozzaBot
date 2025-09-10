@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="/style2.css">
+    <link rel="stylesheet" href="/style.css">
     <title>About LabSim</title>
+    <link rel="icon" href="/images.webp" type="image/x-icon">
+
+    <!-- Load React and ReactDOM from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 </head>
 <body>
     <p>More About Lab Sim</p>
@@ -14,11 +19,24 @@
             <i class="fa-solid fa-house"></i>
             <button class="btn" onclick="window.location.href='../index.html'">Home</button>
         </div>
-        <div class="">
-            <p>lorem ipsum</p>
+        <div class="card">
+            <h1>Labsim's Origin</h1>
+            <p>LabSim was created by MozzaBot to help users learn programming and web development in an interactive and engaging way. The platform offers a variety of coding challenges, tutorials, and resources to assist learners at all levels.</p>
+            <p>With a focus on hands-on learning, LabSim provides users with the opportunity to practice coding in real-time, receive instant feedback, and track their progress. The platform is designed to be user-friendly and accessible, making it easy for anyone to start their coding journey.</p>
+            <p>Whether you're a beginner looking to learn the basics or an experienced developer seeking to enhance your skills, LabSim offers a comprehensive learning experience tailored to your needs.</p>
         </div>
     </div>
     <script src="script.js"></script>
+    <audio src="https://www.youtube.com/watch?v=3mzuFCir6bg&list=RD3mzuFCir6bg&start_radio=1" autoplay loop></audio>
+
+    <div id="output"></div>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Your custom script here -->
+    <script type="text/babel">
+    const getMessage = () => "Hello World";
+    document.getElementById('output').innerHTML = getMessage();
+    </script>
 </body>
 
 </html>

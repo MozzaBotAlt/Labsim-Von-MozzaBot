@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Keywords" content="Labsim von MozzaBot, MozzaBot, Long Infinity, Lab Website, Education, Science, Innovation, Simulator">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Labsim Help Page</title>
+    <link rel="icon" href="/images.webp" type="image/x-icon">
+
+    <!-- Load React and ReactDOM from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+</head>
+<body>
+    <p1>Homepage Lab Sim</p1>
+    <div class="container">
+        <div class="box">
+            <i class="fa-solid fa-house"></i>
+            <h2>Home</h2>
+            <button class="btn" onclick="window.location.href='../index.html'">Home</button>
+        </div>
+        <div class="p">
+          <p>These are the resource of referrence and tutorials for the sim.</p>
+        </div>
+        <div class="card">
+          <h3>Video on actual experiment (Starch):</h3>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Uz7JnVUWCZQ?si=AMB1N2cA1koGvJXS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="card">
+          <h3>Video on actual experiment (Sugar):</h3>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Br_Mh7nmHZM?si=Wz8KbHQWPR4ttbR-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="card">
+          <h3>Video on actual experiment (fat):</h3>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/wScbwdrlucA?si=nmiENHOVtbXzXt8O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="card">
+          <h3>Video on actual experiment (Protein):</h3>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/ufec89A47uM?si=QifCXOstM_QJQgCb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <audio src="https://www.youtube.com/watch?v=3mzuFCir6bg&list=RD3mzuFCir6bg&start_radio=1" autoplay loop></audio>
+
+    <div id="output"></div>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Your custom script here -->
+    <script type="text/babel">
+    const getMessage = () => "Hello World";
+    document.getElementById('output').innerHTML = getMessage();
+    </script>
+</body>
+</html>

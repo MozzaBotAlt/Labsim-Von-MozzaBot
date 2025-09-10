@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/style.css">
     <title>Labsim Help Page</title>
+    <link rel="icon" href="/images.webp" type="image/x-icon">
+
+    <!-- Load React and ReactDOM from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
 </head>
 <body>
@@ -20,11 +25,22 @@
         <div class="p">
           <p>These are the resource of referrence and tutorials for the sim.</p>
         </div>
-        <div>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/Uz7JnVUWCZQ?si=AMB1N2cA1koGvJXS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        
+        <div class="box">
+          <i class="fa-solid fa-book"></i>
         </div>
     </div>
 
     <script src="script.js"></script>
+    <audio src="https://www.youtube.com/watch?v=3mzuFCir6bg&list=RD3mzuFCir6bg&start_radio=1" autoplay loop></audio>
+
+    <div id="output"></div>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Your custom script here -->
+    <script type="text/babel">
+    const getMessage = () => "Hello World";
+    document.getElementById('output').innerHTML = getMessage();
+    </script>
 </body>
 </html>

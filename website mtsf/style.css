@@ -1,14 +1,15 @@
 /* Reset some default styles */
-body, h1, h2, h3, p, ul, li, a, button, labsim {
+body, h1, h2, h3, p, ul, li, a, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Copperplate Gothic Light', 'Copperplate Gothic', sans-serif;
 }
 
 /* Body background and text */
 body {
-    background: linear-gradient(120deg, #f0f4f8 0%, #d9e7fa 100%);
+    background: linear-gradient(120deg, #926186 50%, #944197 50%);
+    /* background: #000000; */
     color: #222;
     min-height: 100vh;
     line-height: 1.6;
@@ -18,10 +19,17 @@ body {
 .container {
     max-width: 900px;
     margin: 40px auto;
-    background: #fff;
+    background: #9263e3;
     border-radius: 16px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     padding: 32px 24px;
+}
+
+/* Font Awesome styling */
+.i {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 16px;
 }
 
 /* Headings */
@@ -41,16 +49,19 @@ h1 {
 
 h2 {
     font-size: 1.7rem;
+    color: #fff;
 }
 
 h3 {
     font-size: 1.2rem;
+    color: #fff;
 }
 
 /* Paragraphs */
 p {
     margin-bottom: 16px;
-    color: #444;
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* Links */
@@ -68,7 +79,7 @@ a:hover {
 
 /* Buttons */
 button, .btn {
-    background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
+    background: #59ad9b;
     color: #fff;
     border: none;
     border-radius: 12px;
@@ -88,7 +99,7 @@ button, .btn {
 }
 
 button:hover, .btn:hover {
-    background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+    background: linear-gradient(90deg, #548b84 0%, #b57eca 100%);
     transform: translateY(-2px) scale(1.03);
 }
 
@@ -127,7 +138,7 @@ nav ul li a:hover {
 
 /* Cards */
 .card {
-    background: #f7fafc;
+    background: #85e6d9;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(42,82,152,0.06);
     padding: 24px;
@@ -161,4 +172,11 @@ nav ul li a:hover {
     h3 {
         font-size: 1.1rem;
     }
+
+}
+
+/* Additional styles for specific elements */
+.header {   
+    text-align: center;
+    margin-bottom: 32px;
 }

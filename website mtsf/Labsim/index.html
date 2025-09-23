@@ -6,7 +6,7 @@
     <meta name="Keywords" content="HTML, Python, CSS, SQL, JavaScript, How to, PHP, Java, C, C++, C#, jQuery, Bootstrap, Colors, W3.CSS, XML, MySQL, Icons, NodeJS, React, Graphics, Angular, R, AI, Git, Data Science, Code Game, Tutorials, Programming, Web Development, Training, Learning, Quiz, Exercises, Courses, Lessons, References, Examples, Learn to code, Source code, Demos, Tips, Website">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="/images.webp" type="image/x-icon">
+    <link rel="icon" href="/multimedia/images.webp" type="image/x-icon">
     <title>Homepage Lab Sim</title>
 
     <!-- Load React and ReactDOM from CDN -->
@@ -21,31 +21,22 @@
             <button class="btn" onclick="window.location.href='../index.html'">Home</button>
         </div>
         <div class="card">
-            <h1>Test for Protein</h1>
-            <iframe src="https://scratch.mit.edu/projects/1211929817/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
-        <div class="card">
-            <h1>IGCSE Test for Starch(Leaf)</h1>
-            <!-- <iframe src="https://scratch.mit.edu/projects/1212284534/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe> -->
+            <h1>Welcome to the Lab Sim Page!</h1>
+            <p>This page contains interactive simulations for various biochemical tests commonly performed in biology labs. Click on the buttons below to access each simulation.</p>
+            <button class="btn" onclick="window.location.href='protein/index.html'">Test for Protein</button>
+            <button class="btn" onclick="window.location.href='sugar/index.html'">Test for Sugar</button>
+            <button class="btn" onclick="window.location.href='starch/index.html'">Test for Starch (Leaf)</button>
+            <button class="btn" onclick="window.location.href='fat/index.html'">Test for Fat</button>
         </div>
     </div>
-    <script src="script.js"></script>
-    <audio src="https://www.youtube.com/watch?v=3mzuFCir6bg&list=RD3mzuFCir6bg&start_radio=1" autoplay loop></audio>
 
+    <script src="script.js"></script>
     <div id="output"></div>
     <!-- Load Babel -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!-- Your custom script here -->
     <script type="text/babel">
-    const getMessage = () => "Hello World";
     document.getElementById('output').innerHTML = getMessage();
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-

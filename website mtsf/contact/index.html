@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Keywords" content="Labsim von MozzaBot, MozzaBot, Long Infinity, Lab Website, Education, Science, Innovation, Simulator">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Contact Us!</title>
+    <link rel="icon" href="/multimedia/images.webp" type="image/x-icon">
+
+    <!-- Load React and ReactDOM from CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+</head>
+<body>
+    <div class="container">
+      <div class="box">
+            <i class="fa-solid fa-house"></i>
+            <button class="btn" onclick="window.location.href='../index.html'">Home</button>
+        </div>
+      <div class="card">
+          <h2>Contact Us!</h2>
+          <p>If you have any questions, feedback, or need assistance, feel free to reach out to us!</p>
+          <ul>
+              <li>Email: <a href="mailto:231046@langkawi.mrsm.edu.my">
+              <li></li>
+              <li>Phone: +60 12-345 6789</li>
+              <li>Address: 123 Lab Street, Science City, Country</li>
+          </ul>
+          <p>We look forward to hearing from you!</p>
+      </div>
+    </div>
+    <script src="script.js"></script>
+
+    <div id="output"></div>
+    <!-- Load Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Your custom script here -->
+    <script type="text/babel">
+    document.getElementById('output').innerHTML = getMessage();
+    </script>
+</body>
+</html>

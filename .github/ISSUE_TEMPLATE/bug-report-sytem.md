@@ -3,7 +3,7 @@ name: Bug Report Sytem
 about: Create a report to help us improve
 title: BUG
 labels: bug
-assignees: MozzaBotAlt
+assignees: MozzaBotAlt, zhafryanir
 
 ---
 

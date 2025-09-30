@@ -29,7 +29,7 @@ body {
 
 /* Font Awesome styling */
 .i {
-    font-size: 3.5rem;
+    font-size: 20px;
     color: #00fff7;
     margin: 15px 15px 15px 15px;
     text-shadow: 0 0 12px #00fff7, 0 0 24px #00fff780;
@@ -134,7 +134,7 @@ nav ul ol {
 nav ul li a ol {
     color: #00fff7;
     font-weight: 600;
-    font-size: 1.15rem;
+    font-size: 20px;
     padding: 10px 20px;
     text-align: left;
     border-radius: 8px;
@@ -150,7 +150,7 @@ nav ul li ol a:hover {
 
 li {
     list-style-type: disc;
-    font-size: 3rem;
+    font-size: 20px;
 }
 
 /* Cards */
@@ -203,4 +203,5 @@ li {
     margin-bottom: 32px;
     color: #00fff7;
     text-shadow: 0 0 8px #00fff780;
+
 }

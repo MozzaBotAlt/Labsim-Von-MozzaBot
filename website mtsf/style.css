@@ -1,7 +1,7 @@
 /* Reset some default styles */
 body, h1, h2, h3, p, ul, li, a, button {
-    margin: 0;
-    padding: 0;
+    margin: 10px;
+    padding: 10px;
     box-sizing: border-box;
     font-family: 'Copperplate Gothic Light', 'Copperplate Gothic', sans-serif;
 }
@@ -20,26 +20,25 @@ body {
     max-width: 900px;
     margin: 40px auto;
     background: rgba(44,83,100,0.6);
-    border-radius: 24px;
+    border-radius: 30px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.18);
     padding: 40px 32px;
 }
 
 /* Font Awesome styling */
 .i {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: #00fff7;
-    margin-bottom: 16px;
+    margin: 15px 15px 15px 15px;
     text-shadow: 0 0 12px #00fff7, 0 0 24px #00fff780;
 }
 
 /* Headings */
 h1, h2, h3 {
     color: #00fff7;
-    margin-bottom: 16px;
+    margin: 20px 20px 20px 20px;
     font-weight: 700;
     font-family: 'Orbitron', 'Copperplate Gothic Light', 'Copperplate Gothic', sans-serif;
     text-shadow: 0 0 8px #00fff780;
@@ -122,28 +121,36 @@ nav {
     box-shadow: 0 2px 16px #00fff740;
     margin-bottom: 40px;
     backdrop-filter: blur(8px);
+    align-items: center;
 }
 
-nav ul {
+nav ul ol {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 40px;
 }
 
-nav ul li a {
+nav ul li a ol {
     color: #00fff7;
     font-weight: 600;
     font-size: 1.15rem;
     padding: 10px 20px;
+    text-align: left;
     border-radius: 8px;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
-nav ul li a:hover {
+nav ul li ol a:hover {
     background: rgba(0,255,247,0.12);
     color: #fff;
     box-shadow: 0 0 8px #00fff780;
+    text-align: left;
+}
+
+li {
+    list-style-type: disc;
+    font-size: 3rem;
 }
 
 /* Cards */
@@ -152,13 +159,13 @@ nav ul li a:hover {
     border-radius: 20px;
     box-shadow: 0 4px 32px #00fff740;
     padding: 32px;
-    margin-bottom: 32px;
+    margin: auto;
     transition: box-shadow 0.2s, border 0.2s;
     align-items: center;
     display: flex;
     flex-direction: column;
     text-align: center;
-    border: 1.5px solid rgba(0,255,247,0.18);
+    border: 1cm solid rgba(0,255,247,0.18);
     backdrop-filter: blur(6px);
 }
 

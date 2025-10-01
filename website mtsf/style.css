@@ -27,9 +27,18 @@ body {
     padding: 40px 32px;
 }
 
+.nav-container {
+    margin: 40px auto;
+    background: rgba(44,83,100,0.6);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
 /* Font Awesome styling */
 .i {
-    font-size: 20px;
+    font-size: 30px;
     color: #00fff7;
     margin: 15px 15px 15px 15px;
     text-shadow: 0 0 12px #00fff7, 0 0 24px #00fff780;
@@ -119,7 +128,7 @@ nav {
     padding: 18px 0;
     border-radius: 0 0 24px 24px;
     box-shadow: 0 2px 16px #00fff740;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     backdrop-filter: blur(8px);
     align-items: center;
 }

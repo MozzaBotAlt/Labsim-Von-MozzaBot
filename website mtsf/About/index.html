@@ -13,28 +13,40 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <style>
         li {
-            text-align: left;
+            text-align: justify;
+            text-align-last: justify;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: medium;
         }
     </style>
 </head>
 <body>
+    <nav>
     <div class="container">
-        <div class="box">
-            <i class="fa-solid fa-house"></i>
-            <button class="btn" onclick="window.location.href='../index.html'">Home</button>
-        </div>
+        <!-- Links -->
+        <a href="../index.html"><img src="../multimedia/images.webp" alt="Home" style="width: auto; height: auto; margin: 20px 20px 20px 20px;"></a>
+        <ul class="navbar-nav">
+            <li>
+                <a href="../help/index.html">Help</a>
+            </li>
+            <li>
+                <a href="../Labsim/index.html">To LabSim</a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+
+    <div class="container">
         <div class="card">
-            <h1 style="text-decoration: underline;">Labsim's Origin</h1>
-            <p>LabSim was created by MozzaBot to help users learn programming and web development in an interactive and engaging way. The platform offers a variety of coding challenges, tutorials, and resources to assist learners at all levels.</p>
-            <p>With a focus on hands-on learning, LabSim provides users with the opportunity to practice coding in real-time, receive instant feedback, and track their progress. The platform is designed to be user-friendly and accessible, making it easy for anyone to start their coding journey.</p>
-            <p>Whether you're a beginner looking to learn the basics or an experienced developer seeking to enhance your skills, LabSim offers a comprehensive learning experience tailored to your needs.</p>
+            <h1 style="text-decoration: underline;">About Labsim</h1>
+            <p>LabSim was created by three developers from MRSM Langkawi. It is created to help users learn science and replicate experiment seamlessly.This simulator is created through scratch platform to allow students replicate lab experiments accurately through a 2D graphics. Labsim is using IGCSE Biology textbook as reference. Biology teachers can also use this platform in class as study aids to help students comprehend the topic more or if the teacher has no materials or apparatuses available.</p>
         </div>
         <div class="card">
             <h1 style="text-decoration: underline;">Objectives</h1>
             <ol>
-                <li>1st obj</li>
-                <li>2nd obj</li>
-                <li>3rd obj</li>
+                <li>Develop an interactive, user-friendly, and scientifically accurate simulator.</li>
+                <li>Allow students to conduct food tests (starch, protein, reducing sugar, fat) in a digital environment</li>
+                <li>Replicate the real lab experience virtually while adding educational and competition value.</li>
             </ol>
         </div>
         <div class="card">
@@ -53,7 +65,6 @@
             </ol>
     </div>
     <script src="script.js"></script>
-    <audio src="https://www.youtube.com/watch?v=3mzuFCir6bg&list=RD3mzuFCir6bg&start_radio=1" autoplay loop></audio>
 
     <div id="output"></div>
     <!-- Load Babel -->

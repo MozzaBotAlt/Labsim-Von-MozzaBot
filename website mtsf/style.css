@@ -123,6 +123,31 @@ button:active, .btn:active {
 }
 
 /* Navigation */
+
+.ul-navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+.ul-navbar .li-navbar {
+  float: left;
+}
+
+.ul-navbar .li-navbar .a-navbar {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+/*
 nav {
     background: rgba(44,83,100,0.8);
     padding: 18px 0;
@@ -156,6 +181,7 @@ nav ul li ol a:hover {
     box-shadow: 0 0 8px #00fff780;
     text-align: left;
 }
+*/
 
 li {
     list-style-type: disc;

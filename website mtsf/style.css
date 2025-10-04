@@ -27,9 +27,18 @@ body {
     padding: 40px 32px;
 }
 
+.nav-container {
+    margin: 40px auto;
+    background: rgba(44,83,100,0.6);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
 /* Font Awesome styling */
 .i {
-    font-size: 20px;
+    font-size: 30px;
     color: #00fff7;
     margin: 15px 15px 15px 15px;
     text-shadow: 0 0 12px #00fff7, 0 0 24px #00fff780;
@@ -114,12 +123,37 @@ button:active, .btn:active {
 }
 
 /* Navigation */
+
+.ul-navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+.ul-navbar .li-navbar {
+  float: left;
+}
+
+.ul-navbar .li-navbar .a-navbar {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+}
+/*
 nav {
     background: rgba(44,83,100,0.8);
     padding: 18px 0;
     border-radius: 0 0 24px 24px;
     box-shadow: 0 2px 16px #00fff740;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     backdrop-filter: blur(8px);
     align-items: center;
 }
@@ -147,6 +181,7 @@ nav ul li ol a:hover {
     box-shadow: 0 0 8px #00fff780;
     text-align: left;
 }
+*/
 
 li {
     list-style-type: disc;

@@ -114,19 +114,20 @@ button:active, .btn:active {
 }
 
 /* Navigation */
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333333;
+
+.ul-navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
 }
 
-ul li {
+.ul-navbar .li-navbar {
   float: left;
 }
 
-ul li a {
+.ul-navbar .li-navbar .a-navbar {
   display: block;
   color: white;
   text-align: center;
@@ -230,3 +231,4 @@ li {
     text-shadow: 0 0 8px #00fff780;
 
 }
+

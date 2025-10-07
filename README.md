@@ -4,9 +4,11 @@ Labsim created by Long Infinity, Lithium class for MozzaBot Development Division
 Usage of this software is for educational purposes and refer to other references for further understanding and information
 
 URL to Labsim:
-1. main: labsim.vercel.app
-2. beta: tinyurl.com/labsim-beta ('Experiment' branch)*
-3. gamma: tinyurl.com/labsim-gamma ('UI Enhancements' branch)*
+1. Finalized: labsim.vercel.app
+
+Experiment branches:
+1. "UI Enhancement": tinyurl.com/labsim-gamma
+2. "Backend": tinyurl.com/labsim-backend
 
 Bugs? Any ideas for improvements? Feedback?
 Tell us on:

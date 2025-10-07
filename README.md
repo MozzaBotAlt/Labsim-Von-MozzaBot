@@ -1,6 +1,6 @@
 <h1 align="center">Labsim Von MozzaBot</h1>
 
-<div align="center" border-radius="20px" border="2px solid gray">
+<div align="center">
   ![photo](./frontend/multimedia/images.webp)
 </div>
 

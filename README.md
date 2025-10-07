@@ -11,11 +11,11 @@ Usage of this software is for educational purposes and refer to other references
 
 ## URL to Simulator
 URL to Labsim:
-- [Main Website](labsim.vercel.app)
+- [Main Website](https://labsim.vercel.app)
 
 Experiment branches:
-- [UI Enhancement](tinyurl.com/labsim-uie)
-- [Backend](tinyurl.com/labsim-backend)
+- [UI Enhancement](https://tinyurl.com/labsim-uie)
+- [Backend](https://tinyurl.com/labsim-backend)
 
 ## Bugs?
 Bugs? Any ideas for improvements? Feedback?

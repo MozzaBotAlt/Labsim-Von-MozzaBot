@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/MozzaBotAlt/Labsim-Von-MozzaBot/">
-  <a href="https://github.com/MozzaBotAlt/Labsim-Von-MozzaBot/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/dbisu/pico-ducky"></a>
+  <a href="https://github.com/MozzaBotAlt/Labsim-Von-MozzaBot/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/MozzaBotAlt/Labsim-Von-MozzaBot/"></a>
   <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/MozzaBotAlt/Labsim-Von-MozzaBot/">
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/MozzaBotAlt/Labsim-Von-MozzaBot/">
 </div>
@@ -33,9 +33,9 @@ Tell us on:
 
 ##Credits and Acknowledgements
 Credits:
-1. Ali Mozzabot I... Team Principal...            Website Developer...      [Github]()
-2. Eiko...             Right Hand Man(RHM)...     Graphic Designer
-3. Whiteshard...       Sub Director...            Game Engine Developer
+1. Ali Mozzabot I... Team Principal...            Website Developer...      [Github](github.com/RaspberryPiNArduinoUser)
+2. Eiko...             Right Hand Man(RHM)...     Graphic Designer...       [Github](github.com/zhafryanir)
+3. Whiteshard...       Sub Director...            Game Engine Developer...  [Scratch]([scratch.mit.edu](https://scratch.mit.edu/users/extwoiskindasus/))
 
 Achnowledgements:
 1. Ahmad Ammar Bin Zainuddin...                      Advisor

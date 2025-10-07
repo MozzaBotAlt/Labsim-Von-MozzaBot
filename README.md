@@ -35,7 +35,7 @@ Tell us on:
 Credits:
 1. Ali Mozzabot I... Team Principal...            Website Developer...      [Github](github.com/RaspberryPiNArduinoUser)
 2. Eiko...             Right Hand Man(RHM)...     Graphic Designer...       [Github](github.com/zhafryanir)
-3. Whiteshard...       Sub Director...            Game Engine Developer...  [Scratch]([scratch.mit.edu](https://scratch.mit.edu/users/extwoiskindasus/))
+3. Whiteshard...       Sub Director...            Game Engine Developer...  [Scratch](https://scratch.mit.edu/users/extwoiskindasus/)
 
 Achnowledgements:
 1. Ahmad Ammar Bin Zainuddin...                      Advisor

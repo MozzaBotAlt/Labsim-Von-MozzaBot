@@ -29,7 +29,7 @@ Experiment branches:
 ##Bugs?
 Bugs? Any ideas for improvements? Feedback?
 Tell us on:
-1. [mailto]:(231046@langkawi.mrsm.edu.my)
+1. 231046@langkawi.mrsm.edu.my
 
 ##Credits and Acknowledgements
 Credits:

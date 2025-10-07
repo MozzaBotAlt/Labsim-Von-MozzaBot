@@ -6,15 +6,6 @@
   <strong>Educational Laboratory Simulator for Students and Teachers</strong>
 </div>
 
-<br />
-<div align="center">
-  <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/MozzaBotAlt/Labsim-Von-MozzaBot/">
-  <a href="https://github.com/MozzaBotAlt/Labsim-Von-MozzaBot/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/MozzaBotAlt/Labsim-Von-MozzaBot/"></a>
-  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/m/MozzaBotAlt/Labsim-Von-MozzaBot/">
-  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/MozzaBotAlt/Labsim-Von-MozzaBot/">
-</div>
-<br />
-
 Labsim created by Long Infinity, Lithium class for MozzaBot Development Division(Education).
 Usage of this software is for educational purposes and refer to other references for further understanding and information
 

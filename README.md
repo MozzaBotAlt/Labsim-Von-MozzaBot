@@ -9,7 +9,7 @@
 Labsim created by Long Infinity, Lithium class for MozzaBot Development Division(Education).
 Usage of this software is for educational purposes and refer to other references for further understanding and information
 
-##URL to Simulator
+## URL to Simulator
 URL to Labsim:
 - [Finalized](labsim.vercel.app)
 
@@ -17,12 +17,12 @@ Experiment branches:
 - [UI Enhancement](tinyurl.com/labsim-gamma)
 - [Backend](tinyurl.com/labsim-backend)
 
-##Bugs?
+## Bugs?
 Bugs? Any ideas for improvements? Feedback?
 Tell us on:
 1. 231046@langkawi.mrsm.edu.my
 
-##Credits and Acknowledgements
+## Credits and Acknowledgements
 Credits:
 1. Ali Mozzabot I... Team Principal...            Website Developer...      [Github](https://github.com/RaspberryPiNArduinoUser)
 2. Eiko...             Right Hand Man(RHM)...     Graphic Designer...       [Github](https://github.com/zhafryanir)
@@ -32,5 +32,5 @@ Achnowledgements:
 1. Ahmad Ammar Bin Zainuddin...                      Advisor
 2. People of Maktab Rendah Sains Mara Langkawi...    Supporter
 
-##Notes
+## Notes
 *Sign in required

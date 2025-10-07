@@ -1,6 +1,6 @@
 <h1 align="center">Labsim Von MozzaBot</h1>
 
-[photo](./multimedia/images.webp)
+![photo](./multimedia/images.webp)
 
 <div align="center">
   <strong>Educational Laboratory Simulator for Students and Teachers</strong>
@@ -33,8 +33,8 @@ Tell us on:
 
 ##Credits and Acknowledgements
 Credits:
-1. Ali Mozzabot I... Team Principal...            Website Developer...      [Github](github.com/RaspberryPiNArduinoUser)
-2. Eiko...             Right Hand Man(RHM)...     Graphic Designer...       [Github](github.com/zhafryanir)
+1. Ali Mozzabot I... Team Principal...            Website Developer...      [Github](https://github.com/RaspberryPiNArduinoUser)
+2. Eiko...             Right Hand Man(RHM)...     Graphic Designer...       [Github](https://github.com/zhafryanir)
 3. Whiteshard...       Sub Director...            Game Engine Developer...  [Scratch](https://scratch.mit.edu/users/extwoiskindasus/)
 
 Achnowledgements:

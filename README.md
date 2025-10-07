@@ -1,6 +1,8 @@
 <h1 align="center">Labsim Von MozzaBot</h1>
 
-![photo](./frontend/multimedia/images.webp)
+<div align="center" border-radius="20px" border="2px solid gray">
+  ![photo](./frontend/multimedia/images.webp)
+</div>
 
 <div align="center">
   <strong>Educational Laboratory Simulator for Students and Teachers</strong>

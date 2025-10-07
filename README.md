@@ -1,7 +1,6 @@
 <h1 align="center">Labsim Von MozzaBot</h1>
 
-![photo](<img width="1350" height="629" alt="image" src="https://github.com/user-attachments/assets/d864fe17-c042-4379-bb97-362efdfe8658" />
-)
+<img width="1350" height="629" alt="image" src="https://github.com/user-attachments/assets/d864fe17-c042-4379-bb97-362efdfe8658" />
 
 <div align="center">
   <strong>Educational Laboratory Simulator for Students and Teachers</strong>

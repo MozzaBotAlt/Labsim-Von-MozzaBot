@@ -21,7 +21,6 @@ Experiment branches:
 Bugs? Any ideas for improvements? Feedback?
 Tell us on:
 1. 231046@langkawi.mrsm.edu.my
-2. 
 
 ## Credits
 Credits:

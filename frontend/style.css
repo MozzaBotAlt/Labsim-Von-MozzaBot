@@ -38,7 +38,7 @@ body {
 /* Headings */
 h1, h2, h3 {
     color: #00fff7;
-    margin: 20px 20px 20px 20px;
+    margin: 20px 20px 20px;
     font-weight: 700;
     font-family: 'Orbitron', 'Copperplate Gothic Light', 'Copperplate Gothic', sans-serif;
     text-shadow: 0 0 8px #00fff780;
@@ -61,12 +61,13 @@ h3 {
 
 /* Paragraphs */
 p {
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     font-family: 'Segoe UI', Arial, sans-serif;
     color: #e0e0e0;
-    font-size: 1.15rem;
-    line-height: 1.8;
-    text-align: left;
+    font-size: 20px;
+    line-height: 1.7;
+    text-align: justify;
+    text-align-last: justify;
 }
 
 /* Links */
@@ -117,14 +118,13 @@ button:active, .btn:active {
 
 .ul-navbar {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin: 10px 10px 10px 10px;
     overflow: hidden;
     background-color: #333333;
 }
 
 .ul-navbar .li-navbar {
-  float: left;
+  float: bottom;
 }
 
 .ul-navbar .li-navbar .a-navbar {
@@ -184,14 +184,13 @@ li {
     background: rgba(0,255,247,0.08);
     border-radius: 20px;
     box-shadow: 0 4px 32px #00fff740;
-    padding: 32px;
-    margin: auto;
+    margin: 20px 20px 20px;
     transition: box-shadow 0.2s, border 0.2s;
     align-items: center;
     display: flex;
     flex-direction: column;
     text-align: center;
-    border: 1cm solid rgba(0,255,247,0.18);
+    border: 10px solid rgba(0,255,247,0.18);
     backdrop-filter: blur(6px);
 }
 
@@ -202,9 +201,6 @@ li {
 
 /* Responsive */
 @media (max-width: 700px) {
-    .container {
-        padding: 18px 8px;
-    }
     nav ul {
         flex-direction: column;
         gap: 16px;
@@ -218,17 +214,20 @@ li {
     h3 {
         font-size: 1rem;
     }
-    .card {
-        padding: 18px;
-    }
 }
 
 /* Additional styles for specific elements */
 .header {   
     text-align: center;
-    margin-bottom: 32px;
-    color: #00fff7;
+    margin-bottom: 30px;
+    color: #2c2e2e;
     text-shadow: 0 0 8px #00fff780;
+}
 
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #2c2e2e;
+    text-shadow: 0 0 8px #00fff780;
 }
 

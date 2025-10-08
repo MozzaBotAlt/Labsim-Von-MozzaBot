@@ -6,16 +6,19 @@
   <strong>Educational Laboratory Simulator for Students and Teachers</strong>
 </div>
 
-Labsim created by Long Infinity, Lithium class for MozzaBot Development Division(Education).
+
+
+Labsim was created by Long Infinity, Lithium class for MozzaBot Development Division(Education) and MRSM Langkawi.
 Usage of this software is for educational purposes and refer to other references for further understanding and information
+This website is mainly built by Ali MozzaBot I.
 
 ## URL to Simulator
 URL to Labsim:
-- [Finalized](labsim.vercel.app)
+- [Finalized](https://labsim.vercel.app)
 
 Experiment branches:
-- [UI Enhancement](tinyurl.com/labsim-gamma)
-- [Backend](tinyurl.com/labsim-backend)
+- [UI Enhancement](https://tinyurl.com/labsim-gamma)
+- [Backend](https://tinyurl.com/labsim-backend)
 
 ## Bugs?
 Bugs? Any ideas for improvements? Feedback?

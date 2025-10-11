@@ -6,8 +6,11 @@
   <strong>Educational Laboratory Simulator for Students and Teachers</strong>
 </div>
 
-Labsim created by Long Infinity, Lithium class for MozzaBot Development Division(Education).
+
+
+Labsim was created by Long Infinity, Lithium class for MozzaBot Development Division(Education) and MRSM Langkawi.
 Usage of this software is for educational purposes and refer to other references for further understanding and information
+This website is mainly built by Ali MozzaBot I.
 
 ##URL to Simulator
 URL to Labsim:
@@ -28,7 +31,7 @@ Credits:
 2. Eiko...             Right Hand Man(RHM)...     Graphic Designer...       [Github](https://github.com/zhafryanir)
 3. Whiteshard...       Sub Director...            Game Engine Developer...  [Scratch](https://scratch.mit.edu/users/extwoiskindasus/)
 
-Achnowledgements:
+## Achnowledgements:
 1. Ahmad Ammar Bin Zainuddin...                      Advisor
 2. People of Maktab Rendah Sains Mara Langkawi...    Supporter
 

@@ -107,6 +107,7 @@ button, .btn {
     border: none;
     border-radius: 16px;
     padding: 16px 60px;
+    padding: 16px 40px;
     font-size: 1.15rem;
     font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
     letter-spacing: 2px;
@@ -158,6 +159,20 @@ ul li {
 }
 
 ul li a {
+/* Navigation */
+
+.ul-navbar {
+    list-style-type: none;
+    margin: 10px 10px 10px 10px;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+.ul-navbar .li-navbar {
+  float: bottom;
+}
+
+.ul-navbar .li-navbar .a-navbar {
   display: block;
   color: white;
   text-align: center;
@@ -216,12 +231,14 @@ li {
     box-shadow: 0 4px 32px #00fff740;
     padding: 32px;
     margin: auto;
+    margin: 20px 20px 20px;
     transition: box-shadow 0.2s, border 0.2s;
     align-items: center;
     display: flex;
     flex-direction: column;
     text-align: center;
     border: 1cm solid rgba(0,255,247,0.18);
+    border: 10px solid rgba(0,255,247,0.18);
     backdrop-filter: blur(6px);
 }
 
@@ -260,5 +277,15 @@ li {
     color: #00fff7;
     text-shadow: 0 0 8px #00fff780;
 
+    margin-bottom: 30px;
+    color: #2c2e2e;
+    text-shadow: 0 0 8px #00fff780;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #2c2e2e;
+    text-shadow: 0 0 8px #00fff780;
 }
 

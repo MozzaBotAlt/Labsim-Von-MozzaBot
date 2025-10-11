@@ -1,3 +1,8 @@
+//vercel analytics
+import { inject } from "@vercel/analytics";
+
+inject();
+
 // Add fading effects when switching tabs
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -23,8 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.style.opacity = 1;
       btn.style.transform = "scale(1)";
     }, 400 + i * 80);
-    // Ripple/glow effect on click
+    // Ripple/glow effect on click (stop propagation so outer article click doesn't double-navigate)
     btn.addEventListener("click", function (e) {
+      e.stopPropagation();
       const ripple = document.createElement("span");
       ripple.className = "ripple-effect";
       ripple.style.left = e.offsetX + "px";
@@ -122,25 +128,56 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log(data);
     });
 
-  fetch("https://lvm-backend-j0ws.onrender.com/date", {
-    method: "GET",
-  })
-    .then((response) => response.json())
-    .then((date) => {
-      console.log("Date:", date);
-      displayDateInHTML(date);
-    });
+  // Fetch a date from backend with a timeout. If it fails, show local formatted date as fallback.
+  (function fetchDateWithFallback() {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 3500);
+    fetch("https://lvm-backend-j0ws.onrender.com/date", {
+      method: "GET",
+      signal: controller.signal,
+    })
+      .then((response) => response.json())
+      .then((date) => {
+        clearTimeout(timeout);
+        console.log("Date:", date);
+        displayDateInHTML(date);
+      })
+      .catch((err) => {
+        clearTimeout(timeout);
+        console.warn(
+          "Date fetch failed, using local time:",
+          err && err.message ? err.message : err
+        );
+        displayDateInHTML(new Date().toISOString());
+      });
+  })();
 
   // Function to display the date in the HTML element with id 'date'
   function displayDateInHTML(date) {
     const dateElement = document.getElementById("date");
-    if (dateElement) {
-      // If the API returns an object with a property, adjust as needed
-      if (typeof date === "object" && date !== null && date.date) {
-        dateElement.textContent = date.date;
-      } else {
-        dateElement.textContent = date;
-      }
+    if (!dateElement) return;
+    // Normalize to a Date object if possible
+    let d = null;
+    if (typeof date === "object" && date !== null) {
+      if (date.date) d = new Date(date.date);
+      else if (date.iso) d = new Date(date.iso);
+    } else if (typeof date === "string") {
+      d = new Date(date);
+    } else if (date instanceof Date) {
+      d = date;
+    }
+
+    if (d && !isNaN(d)) {
+      // Friendly formatted date (e.g. Oct 11, 2025 — 14:05)
+      const opts = { year: "numeric", month: "short", day: "numeric" };
+      const timeOpts = { hour: "2-digit", minute: "2-digit" };
+      dateElement.textContent = `${d.toLocaleDateString(
+        undefined,
+        opts
+      )} — ${d.toLocaleTimeString(undefined, timeOpts)}`;
+    } else {
+      // Fallback: show raw value
+      dateElement.textContent = String(date);
     }
   }
 

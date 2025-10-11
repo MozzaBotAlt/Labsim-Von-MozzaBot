@@ -1,70 +1,58 @@
-//backend data fetching
-document.getElementById('submitBtn').addEventListener('click', () => {
-      fetch('http://localhost:3000/api/data', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ name: 'John Doe' })
-      })
-      .then(response => response.json())
-      .then(data => console.log('Success:', data))
-      .catch((error) => console.error('Error:', error));
-    });
-
-
 // Add fading effects when switching tabs
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Animate cards and buttons on load
-    const cards = document.querySelectorAll('.card');
-    const buttons = document.querySelectorAll('button, .btn');
-    cards.forEach((card, i) => {
-        card.style.opacity = 0;
-        card.style.transform = 'translateY(40px) scale(0.96)';
-        setTimeout(() => {
-            card.style.transition = 'opacity 0.7s cubic-bezier(.68,-0.55,.27,1.55), transform 0.7s cubic-bezier(.68,-0.55,.27,1.55)';
-            card.style.opacity = 1;
-            card.style.transform = 'translateY(0) scale(1)';
-        }, 200 + i * 120);
+  // Animate cards and buttons on load
+  const cards = document.querySelectorAll(".card");
+  const buttons = document.querySelectorAll("button, .btn");
+  cards.forEach((card, i) => {
+    card.style.opacity = 0;
+    card.style.transform = "translateY(40px) scale(0.96)";
+    setTimeout(() => {
+      card.style.transition =
+        "opacity 0.7s cubic-bezier(.68,-0.55,.27,1.55), transform 0.7s cubic-bezier(.68,-0.55,.27,1.55)";
+      card.style.opacity = 1;
+      card.style.transform = "translateY(0) scale(1)";
+    }, 200 + i * 120);
+  });
+  buttons.forEach((btn, i) => {
+    btn.style.opacity = 0;
+    btn.style.transform = "scale(0.9)";
+    setTimeout(() => {
+      btn.style.transition =
+        "opacity 0.5s, transform 0.5s cubic-bezier(.68,-0.55,.27,1.55)";
+      btn.style.opacity = 1;
+      btn.style.transform = "scale(1)";
+    }, 400 + i * 80);
+    // Ripple/glow effect on click
+    btn.addEventListener("click", function (e) {
+      const ripple = document.createElement("span");
+      ripple.className = "ripple-effect";
+      ripple.style.left = e.offsetX + "px";
+      ripple.style.top = e.offsetY + "px";
+      btn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
     });
-    buttons.forEach((btn, i) => {
-        btn.style.opacity = 0;
-        btn.style.transform = 'scale(0.9)';
-        setTimeout(() => {
-            btn.style.transition = 'opacity 0.5s, transform 0.5s cubic-bezier(.68,-0.55,.27,1.55)';
-            btn.style.opacity = 1;
-            btn.style.transform = 'scale(1)';
-        }, 400 + i * 80);
-        // Ripple/glow effect on click
-        btn.addEventListener('click', function(e) {
-            const ripple = document.createElement('span');
-            ripple.className = 'ripple-effect';
-            ripple.style.left = e.offsetX + 'px';
-            ripple.style.top = e.offsetY + 'px';
-            btn.appendChild(ripple);
-            setTimeout(() => ripple.remove(), 600);
-        });
+  });
+  // Animated icon hover
+  const icons = document.querySelectorAll("i.fa-solid");
+  icons.forEach((icon) => {
+    icon.addEventListener("mouseenter", () => {
+      icon.style.transition =
+        "transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), color 0.3s";
+      icon.style.transform = "scale(1.2) rotate(-10deg)";
+      icon.style.color = "#00fff7";
     });
-    // Animated icon hover
-    const icons = document.querySelectorAll('i.fa-solid');
-    icons.forEach(icon => {
-        icon.addEventListener('mouseenter', () => {
-            icon.style.transition = 'transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), color 0.3s';
-            icon.style.transform = 'scale(1.2) rotate(-10deg)';
-            icon.style.color = '#00fff7';
-        });
-        icon.addEventListener('mouseleave', () => {
-            icon.style.transform = 'scale(1) rotate(0deg)';
-            icon.style.color = '';
-        });
+    icon.addEventListener("mouseleave", () => {
+      icon.style.transform = "scale(1) rotate(0deg)";
+      icon.style.color = "";
     });
-    // ...existing code...
-    // Ripple effect CSS (inject once)
-    if (!document.getElementById('ripple-style')) {
-        const rippleStyle = document.createElement('style');
-        rippleStyle.id = 'ripple-style';
-        rippleStyle.innerHTML = `
+  });
+  // ...existing code...
+  // Ripple effect CSS (inject once)
+  if (!document.getElementById("ripple-style")) {
+    const rippleStyle = document.createElement("style");
+    rippleStyle.id = "ripple-style";
+    rippleStyle.innerHTML = `
         .ripple-effect {
             position: absolute;
             width: 40px;
@@ -82,47 +70,85 @@ document.addEventListener("DOMContentLoaded", function () {
             100% { opacity: 0; transform: translate(-50%, -50%) scale(2.8); }
         }
         `;
-        document.head.appendChild(rippleStyle);
-    }
-    // Assume tabs are <a> elements inside nav, and tab contents have class "tab-content"
-    const tabLinks = document.querySelectorAll("nav ul li a");
-    const tabContents = document.querySelectorAll(".tab-content");
+    document.head.appendChild(rippleStyle);
+  }
+  // Assume tabs are <a> elements inside nav, and tab contents have class "tab-content"
+  const tabLinks = document.querySelectorAll("nav ul li a");
+  const tabContents = document.querySelectorAll(".tab-content");
 
-    function showTab(targetId) {
-        tabContents.forEach(content => {
-            if (content.id === targetId) {
-                content.style.opacity = 0;
-                content.style.display = "block";
-                setTimeout(() => {
-                    content.style.transition = "opacity 0.5s";
-                    content.style.opacity = 1;
-                }, 10);
-            } else {
-                content.style.transition = "opacity 0.5s";
-                content.style.opacity = 0;
-                setTimeout(() => {
-                    content.style.display = "none";
-                }, 500);
-            }
-        });
-    }
+  function showTab(targetId) {
+    tabContents.forEach((content) => {
+      if (content.id === targetId) {
+        content.style.opacity = 0;
+        content.style.display = "block";
+        setTimeout(() => {
+          content.style.transition = "opacity 0.5s";
+          content.style.opacity = 1;
+        }, 10);
+      } else {
+        content.style.transition = "opacity 0.5s";
+        content.style.opacity = 0;
+        setTimeout(() => {
+          content.style.display = "none";
+        }, 500);
+      }
+    });
+  }
 
-    tabLinks.forEach(link => {
-        link.addEventListener("click", function (e) {
-            const targetId = this.getAttribute("href").replace("#", "");
-            if (document.getElementById(targetId)) {
-                e.preventDefault();
-                showTab(targetId);
-            }
-        });
+  tabLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      const targetId = this.getAttribute("href").replace("#", "");
+      if (document.getElementById(targetId)) {
+        e.preventDefault();
+        showTab(targetId);
+      }
+    });
+  });
+
+  // Optional: Show the first tab by default
+  if (tabContents.length > 0) {
+    tabContents.forEach((c, i) => {
+      c.style.opacity = i === 0 ? 1 : 0;
+      c.style.display = i === 0 ? "block" : "none";
+      c.style.transition = "opacity 0.5s";
+    });
+  }
+
+  fetch("https://lvm-backend-j0ws.onrender.com/data", {
+    method: "GET",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
     });
 
-    // Optional: Show the first tab by default
-    if (tabContents.length > 0) {
-        tabContents.forEach((c, i) => {
-            c.style.opacity = i === 0 ? 1 : 0;
-            c.style.display = i === 0 ? "block" : "none";
-            c.style.transition = "opacity 0.5s";
-        });
+  fetch("https://lvm-backend-j0ws.onrender.com/date", {
+    method: "GET",
+  })
+    .then((response) => response.json())
+    .then((date) => {
+      console.log("Date:", date);
+      displayDateInHTML(date);
+    });
+
+  // Function to display the date in the HTML element with id 'date'
+  function displayDateInHTML(date) {
+    const dateElement = document.getElementById("date");
+    if (dateElement) {
+      // If the API returns an object with a property, adjust as needed
+      if (typeof date === "object" && date !== null && date.date) {
+        dateElement.textContent = date.date;
+      } else {
+        dateElement.textContent = date;
+      }
     }
+  }
+
+  fetch("https://lvm-backend-j0ws.onrender.com/", {
+    method: "GET",
+  }).then((response) =>
+    response.status === 200
+      ? console.log("Backend is up and running:", response.status)
+      : console.log("Backend is down:", response.status)
+  );
 });

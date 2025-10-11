@@ -77,6 +77,15 @@ p {
     text-align: left;
 }
 
+.date {
+    position: relative;
+    text-align: center;
+    color: #00fff7;
+    font-size: 1rem;
+    margin-top: 20px;
+    text-shadow: 0 0 8px #00fff780;
+}
+
 /* Links */
 a {
     color: #00fff7;

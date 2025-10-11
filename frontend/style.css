@@ -130,6 +130,19 @@ button:active, .btn:active {
     box-shadow: 0 0 16px #00fff780;
 }
 
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(44,83,100,0.8);
+    color: #00fff7;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(0,255,247,0.18);
+    box-shadow: 0 -2px 16px #00fff740;
+    backdrop-filter: blur(8px);
+    margin-top: 40px;
+}
+
 /* Navigation */
 
 ul {

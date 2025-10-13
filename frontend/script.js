@@ -151,6 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  fetchData();
 
   fetch(baseurl, {
     method: "GET"

@@ -125,8 +125,8 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(baseurl + "date", {
     method: "GET",
   })
-    .then((response) => console.log(response))
-    .catch(console.error());
+    .then((response) => console.info("Server time: ", response))
+    .catch(error => console.error(error));
 
   fetch(baseurl + "data", {
     method: "GET",
@@ -134,13 +134,12 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => console.log(response))
     .then(data => console.log(data))
     .catch(error => console.error(error));
+    document.getElementById("date").innerHTML = date;
 
-  const btn = document.getElementById('btn');
   async function fetchData() {
     await new Promise(resolve => setTimeout(resolve, 2500));
     try {
       const response = await fetch(baseurl + "data")
-      document.getElementById("button").innerHTML
 
       if(!response.ok) {
         throw new Error("Could not fetch resource");
@@ -152,11 +151,14 @@ document.addEventListener("DOMContentLoaded", function () {
     catch(error) {
       console.error(error);
     }
+    document.getElementById("button").innerHTML = data;
   }
 
   fetch(baseurl, {
     method: "GET"
   })
+    .then(respone => console.info(respone))
+    .catch(error => console.error(error))
     console.log(`Status: ${response.status}`);
     console.log(`Status Text: ${response.statusText}`);
     console.log(`OK: ${response.ok}`);

@@ -128,8 +128,22 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((response) => console.log(response))
     .catch(console.error());
 
-  fetch(baseurl, {
+  fetch(baseurl + "data", {
     method: "GET",
   })
-  .then(response => console.log(response))
+    .then(response => console.log(response))
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+
+  fetch(baseurl, {
+    method: "GET"
+  })
+    .then(response => {
+      if(!response.ok) {
+        throw new Error("Could not fetch resource!")
+      }
+      return response.json()
+    })
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
 });

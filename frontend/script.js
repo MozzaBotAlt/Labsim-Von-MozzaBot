@@ -135,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(data => console.log(data))
     .catch(error => console.error(error));
 
-  fetchData();
   async function fetchData() {
     try {
       const response = await fetch(baseurl + "data")

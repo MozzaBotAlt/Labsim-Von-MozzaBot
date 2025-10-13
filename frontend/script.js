@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fetchData()
   async function fetchData() {
     try {
-      const response = await fetch(baseurl + data)
+      const response = await fetch(baseurl + "data")
 
       if(!response.ok) {
         throw new Error("Could not fetch resource");

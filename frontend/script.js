@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const btn = document.getElementById('btn');
   async function fetchData() {
+    await new Promise(resolve => setTimeout(resolve, 2500));
     try {
       const response = await fetch(baseurl + "data")
 
@@ -159,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if(!response.ok) {
         throw new Error("Could not fetch resource!")
       }
-      return response.statusText()
+      return response.status()
     })
     .then(data => console.log(data))
     .catch(error => console.error(error));

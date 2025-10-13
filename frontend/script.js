@@ -1,8 +1,8 @@
 //vercel analytics
-import { inject } from "@vercel/analytics";
+/*import { inject } from "@vercel/analytics";
 
 inject();
-
+*/
 // Add fading effects when switching tabs
 
 document.addEventListener("DOMContentLoaded", function () {

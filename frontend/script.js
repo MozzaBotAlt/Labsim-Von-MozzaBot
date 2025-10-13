@@ -132,9 +132,9 @@ document.addEventListener("DOMContentLoaded", function () {
     method: "GET",
   })
     .then(response => console.log(response))
-    .then(date => console.log(date))
+    .then(data => console.log(data))
     .catch(error => console.error(error));
-    document.getElementById("date").innerHTML = date;
+    document.getElementById("date").innerHTML = data;
 
   fetchData()
   async function fetchData() {

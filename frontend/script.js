@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if(!response.ok) {
         throw new Error("Could not fetch resource!")
       }
-      return response.json()
+      return response.statusText()
     })
     .then(data => console.log(data))
     .catch(error => console.error(error));

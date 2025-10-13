@@ -140,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
     await new Promise(resolve => setTimeout(resolve, 2500));
     try {
       const response = await fetch(baseurl + "data")
+      document.getElementById("button").innerHTML
 
       if(!response.ok) {
         throw new Error("Could not fetch resource");
@@ -156,12 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(baseurl, {
     method: "GET"
   })
-    .then(response => {
-      if(!response.ok) {
-        throw new Error("Could not fetch resource!")
-      }
-      return response.status()
-    })
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
+    console.log(`Status: ${response.status}`);
+    console.log(`Status Text: ${response.statusText}`);
+    console.log(`OK: ${response.ok}`);
+    console.log(`URL: ${response.url}`);
 });

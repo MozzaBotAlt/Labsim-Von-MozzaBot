@@ -152,7 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
     catch(error) {
       console.error(error);
     }
-    document.getElementById("button").innerHTML = data;
+    var data = document.getElementById("button").value;
+    info(data);
   }
 
   fetch(baseurl, {

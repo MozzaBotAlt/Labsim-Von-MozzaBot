@@ -135,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(data => console.log(data))
     .catch(error => console.error(error));
 
+  fetchData();
   async function fetchData() {
     try {
       const response = await fetch(baseurl + "data")
@@ -150,8 +151,6 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error(error);
     }
   }
-
-  fetchData();
 
   fetch(baseurl, {
     method: "GET"

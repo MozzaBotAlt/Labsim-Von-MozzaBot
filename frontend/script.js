@@ -136,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .catch(error => console.error(error));
     document.getElementById("date").innerHTML = date;
 
+  fetchData()
   async function fetchData() {
     await new Promise(resolve => setTimeout(resolve, 2500));
     try {

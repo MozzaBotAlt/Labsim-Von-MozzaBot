@@ -123,10 +123,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   //API Fetching
-  const baseurl = 'https://lvm-backend-j0ws.onrender.com/'
   const button = document.getElementById('button');
 
   button.addEventListener("click", fetchDate);
+  
+  const baseurl = 'https://lvm-backend-j0ws.onrender.com/';
   
   fetch(baseurl, {
       method: "GET"

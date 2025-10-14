@@ -124,7 +124,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // API Fetching
   const button = document.getElementById('button');
+  const button2 = document.getElementById('button2');
 
+  button2.addEventListener("click", fetchData);
   button.addEventListener("click", fetchDate);
 
   const baseurl = "https://lvm-backend-j0ws.onrender.com/";
@@ -133,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(baseurl, {
     method: "GET",
   })
-    .then(response => response.json()) // Parse the JSON from the response
+    .then(response => response.statusText()) // Parse the JSON from the response
     .then(data => {
       console.log(data);  // Log the data from the base URL
       console.log(`Status: OK`);  // Assuming the request was successful
@@ -143,6 +145,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   // Fetch data URL
+  async function fetchData() {
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    try {
+      const response = await fetch(baseurl + 'data');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      const serverData = data;
+      console.log('Data from server:', serverData);
+    } catch (error) { console.error(error) }
+  }
   fetch(baseurl + "data", {
     method: "GET",
   })

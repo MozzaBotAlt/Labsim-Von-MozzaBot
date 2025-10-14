@@ -135,11 +135,11 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(baseurl, {
     method: "GET",
   })
-    .then(response => response.statusText()) // Parse the JSON from the response
-    .then(data => {
-      console.log(data);  // Log the data from the base URL
-      console.log(`Status: OK`);  // Assuming the request was successful
-    })
+    .then(response => {
+    // Log status code and status text
+    console.log(`Status Code: ${response.status}`);
+    console.log(`Status Text: ${response.statusText}`);
+  })
     .catch(error => {
       console.error('Error fetching base URL:', error);
     });
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Async function to fetch the date
   async function fetchDate() {
-    await new Promise(resolve => setTimeout(resolve, 2500)); // Delay the fetching
+    await new Promise(resolve => setTimeout(resolve, 2000)); // Delay the fetching
 
     try {
       const response = await fetch(baseurl + 'date');
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const serverDate = new Date(data.date); // Convert the ISO string to a Date object
       console.log('Date from server:', serverDate);
       // Display the date in the frontend
-      document.getElementById('dateDisplay').textContent = serverDate.toLocaleString();
+      document.getElementById('date').textContent = serverDate.toLocaleString();
     } catch (error) {
       console.error('Error fetching date:', error);
     }

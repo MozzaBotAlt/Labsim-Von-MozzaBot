@@ -131,8 +131,8 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(baseurl, {
       method: "GET"
     })
-      .then(response => console.info(response))
       .catch(error => console.error(error))
+      const response = response.json()
       console.log(`Status: ${response.status}`);
       console.log(`Status Text: ${response.statusText}`);
       console.log(`OK: ${response.ok}`);
@@ -142,8 +142,9 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(baseurl + "data", {
     method: "GET",
   })
-    .then(response => response.json(data))
-    .then(data => console.log(data))
+    .then(response => response.json())
+    const data = response.json()
+    .then(console.log(data))
     .catch(error => console.error(error));
 
   async function fetchDate() {

@@ -122,14 +122,24 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const baseurl = 'https://lvm-backend-j0ws.onrender.com/';
+  //API Fetching
 
-  fetch(baseurl + "date", {
-    method: "GET",
+  const button = document.getElementById('button');
+
+  button.addEventListener("click", fetchDate);
+
+  const baseurl = 'https://lvm-backend-j0ws.onrender.com/';
+  
+  fetch(baseurl, {
+      method: "GET"
+    })
+      .then(respone => console.info(respone))
+      .catch(error => console.error(error))
+      console.log(`Status: ${response.status}`);
+      console.log(`Status Text: ${response.statusText}`);
+      console.log(`OK: ${response.ok}`);
+      console.log(`URL: ${response.url}`);
   })
-    .then(response => console.log(response))
-    .then(date => console.info("Server time: ", date))
-    .catch(error => console.error(error));
 
   fetch(baseurl + "data", {
     method: "GET",
@@ -137,10 +147,8 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.json(data))
     .then(data => console.log(data))
     .catch(error => console.error(error));
-    document.getElementById("date").innerHTML = data;
 
-  fetchData()
-  async function fetchData() {
+  async function fetchDate() {
     await new Promise(resolve => setTimeout(resolve, 2500));
     try {
         const response = await fetch(baseurl + 'date');
@@ -156,15 +164,5 @@ document.addEventListener("DOMContentLoaded", function () {
       catch (error) {
           console.error('Error fetching date:', error);
       }
-  }
+  };
 
-  fetch(baseurl, {
-    method: "GET"
-  })
-    .then(respone => console.info(respone))
-    .catch(error => console.error(error))
-    console.log(`Status: ${response.status}`);
-    console.log(`Status Text: ${response.statusText}`);
-    console.log(`OK: ${response.ok}`);
-    console.log(`URL: ${response.url}`);
-});

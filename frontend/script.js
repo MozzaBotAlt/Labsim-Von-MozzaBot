@@ -5,6 +5,8 @@ inject();
 */
 // Add fading effects when switching tabs
 
+console.info("Copyright (C) 2025  Ali Mozzabot I, This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'. This is free software, and you are welcome to redistribute it under certain conditions; type `show c' for details. ")
+
 document.addEventListener("DOMContentLoaded", function () {
   // Animate cards and buttons on load
   const cards = document.querySelectorAll(".card");
@@ -125,13 +127,14 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(baseurl + "date", {
     method: "GET",
   })
-    .then((date) => console.info("Server time: ", date))
+    .then(response => console.log(response))
+    .then(date => console.info("Server time: ", date))
     .catch(error => console.error(error));
 
   fetch(baseurl + "data", {
     method: "GET",
   })
-    .then(data => respone.json(data))
+    .then(response => response.json(data))
     .then(data => console.log(data))
     .catch(error => console.error(error));
     document.getElementById("date").innerHTML = data;
@@ -140,20 +143,19 @@ document.addEventListener("DOMContentLoaded", function () {
   async function fetchData() {
     await new Promise(resolve => setTimeout(resolve, 2500));
     try {
-      const response = await fetch(baseurl + "data")
-
-      if(!response.ok) {
-        throw new Error("Could not fetch resource");
+        const response = await fetch(baseurl + 'date');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        const serverDate = new Date(data.date); // Convert the ISO string back to a Date object
+        console.log('Date from server:', serverDate);
+        // You can now display this date in your frontend, e.g., in a div
+        document.getElementById('dateDisplay').textContent = serverDate.toLocaleString();
+      } 
+      catch (error) {
+          console.error('Error fetching date:', error);
       }
-
-      const data = await response.json();
-      console.log(data);
-    }
-    catch(error) {
-      console.error(error);
-    }
-    var data = document.getElementById("button").value;
-    info(data);
   }
 
   fetch(baseurl, {

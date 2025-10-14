@@ -125,13 +125,13 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(baseurl + "date", {
     method: "GET",
   })
-    .then((response) => console.info("Server time: ", response))
+    .then((date) => console.info("Server time: ", date))
     .catch(error => console.error(error));
 
   fetch(baseurl + "data", {
     method: "GET",
   })
-    .then(response => console.log(response))
+    .then(data => respone.json(data))
     .then(data => console.log(data))
     .catch(error => console.error(error));
     document.getElementById("date").innerHTML = data;

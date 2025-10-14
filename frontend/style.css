@@ -39,9 +39,7 @@ body {
 }
 
 /* Headings */
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   color: #e6f7f7;
   margin: 0 0 10px 0;
 }
@@ -136,6 +134,25 @@ button:active,
 }
 
 /* Navigation */
+
+.nav-ulist .nav-list{
+  list-style-type: none;
+  margin-bottom: 10px;
+  padding: 0;
+  display: flex;
+  border: 1px solid #e7e7e7;
+  background-color: #f3f3f3;
+  float: left;
+  border-right: 1px solid #bbbbbb;
+}
+
+.nav-ulist .nav-list:last-child {
+  border-right: none;
+}
+
+.nav-ulist .nav-list:first-child {
+  border-left: 1px solid #bbbbbb;
+}
 
 /* Cards grid */
 .cards {

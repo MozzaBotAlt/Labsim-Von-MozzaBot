@@ -122,47 +122,54 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  //API Fetching
+  // API Fetching
   const button = document.getElementById('button');
 
   button.addEventListener("click", fetchDate);
-  
+
   const baseurl = "https://lvm-backend-j0ws.onrender.com/";
 
+  // Fetch base URL and handle the response
   fetch(baseurl, {
-      method: "GET"
-    })
-      .catch(error => console.error(error))
-      const response = response.json()
-      console.log(`Status: ${response.status}`);
-      console.log(`Status Text: ${response.statusText}`);
-      console.log(`OK: ${response.ok}`);
-      console.log(`URL: ${response.url}`);
+    method: "GET",
   })
+    .then(response => response.json()) // Parse the JSON from the response
+    .then(data => {
+      console.log(data);  // Log the data from the base URL
+      console.log(`Status: OK`);  // Assuming the request was successful
+    })
+    .catch(error => {
+      console.error('Error fetching base URL:', error);
+    });
 
+  // Fetch data URL
   fetch(baseurl + "data", {
     method: "GET",
   })
-    .then(response => response.json())
-    const data = response.json()
-    .then(console.log(data))
-    .catch(error => console.error(error));
+    .then(response => response.json()) // Parse the JSON from the response
+    .then(data => {
+      console.log('Data from /data:', data);
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
 
+  // Async function to fetch the date
   async function fetchDate() {
-    await new Promise(resolve => setTimeout(resolve, 2500));
-    try {
-        const response = await fetch(baseurl + 'date');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
-        const serverDate = new Date(data.date); // Convert the ISO string back to a Date object
-        console.log('Date from server:', serverDate);
-        // You can now display this date in your frontend, e.g., in a div
-        document.getElementById('dateDisplay').textContent = serverDate.toLocaleString();
-      } 
-      catch (error) {
-          console.error('Error fetching date:', error);
-      }
-  };
+    await new Promise(resolve => setTimeout(resolve, 2500)); // Delay the fetching
 
+    try {
+      const response = await fetch(baseurl + 'date');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      const serverDate = new Date(data.date); // Convert the ISO string to a Date object
+      console.log('Date from server:', serverDate);
+      // Display the date in the frontend
+      document.getElementById('dateDisplay').textContent = serverDate.toLocaleString();
+    } catch (error) {
+      console.error('Error fetching date:', error);
+    }
+  }
+});

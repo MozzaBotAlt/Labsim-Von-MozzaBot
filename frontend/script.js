@@ -5,7 +5,7 @@ inject();
 */
 // Add fading effects when switching tabs
 
-console.info("Copyright (C) 2025  Ali Mozzabot I, This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'. This is free software, and you are welcome to redistribute it under certain conditions; type `show c' for details. ")
+console.info("Copyright (C) 2025  Ali Mozzabot I, This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions. ")
 
 document.addEventListener("DOMContentLoaded", function () {
   // Animate cards and buttons on load
@@ -127,8 +127,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   button.addEventListener("click", fetchDate);
   
-  const baseurl = 'https://lvm-backend-j0ws.onrender.com/';
-  
+  const baseurl = "https://lvm-backend-j0ws.onrender.com/";
+
   fetch(baseurl, {
       method: "GET"
     })

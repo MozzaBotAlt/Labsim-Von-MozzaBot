@@ -144,31 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error('Error fetching base URL:', error);
     });
 
-  // Fetch data URL
-  async function fetchData() {
-    await new Promise(resolve => setTimeout(resolve, 2000));
-
-    try {
-      const response = await fetch(baseurl + 'data');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      const serverData = data;
-      console.log('Data from server:', serverData);
-    } catch (error) { console.error(error) }
-  }
-  fetch(baseurl + "data", {
-    method: "GET",
-  })
-    .then(response => response.json()) // Parse the JSON from the response
-    .then(data => {
-      console.log('Data from /data:', data);
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
-
   // Async function to fetch the date
   async function fetchDate() {
     await new Promise(resolve => setTimeout(resolve, 2000)); // Delay the fetching
@@ -187,4 +162,22 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error('Error fetching date:', error);
     }
   }
+
+  /*
+  window.onload = function() {
+    const canvas = document.getElementById('confetti-canvas');
+    const myConfetti = confetti.create(canvas, {
+    resize: true,
+    useWorker: true
+    });
+
+    // Launch confetti from a central point when the page loads
+    myConfetti({
+        particleCount: 450,
+        spread: 350,
+        origin: { y: 0.6 },
+        shapes: ['square', 'circle'],
+        colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a']
+    });
+  };  */
 });

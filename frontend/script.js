@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(baseurl, {
       method: "GET"
     })
-      .then(respone => console.info(respone))
+      .then(response => console.info(response))
       .catch(error => console.error(error))
       console.log(`Status: ${response.status}`);
       console.log(`Status Text: ${response.statusText}`);

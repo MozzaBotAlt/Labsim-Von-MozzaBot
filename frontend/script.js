@@ -124,9 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // API Fetching
   const button = document.getElementById('button');
-  const button2 = document.getElementById('button2');
 
-  button2.addEventListener("click", fetchData);
   button.addEventListener("click", fetchDate);
 
   const baseurl = "https://lvm-backend-j0ws.onrender.com/";

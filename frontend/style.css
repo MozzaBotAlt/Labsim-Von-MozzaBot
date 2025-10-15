@@ -138,10 +138,12 @@ button:active,
   list-style-type: none;
   margin-bottom: 10px;
   padding: 0;
-  display: flex;
-  border: 1px solid #e7e7e7;
   float: left;
-  border-right: 1px solid #bbbbbb;
+  border-right: 2px solid #bbbbbb;
+  color: black; 
+  text-shadow: none; 
+  text-rendering: geometricPrecision;
+  text-decoration-line: none;
 }
 
 .nav-ulist .nav-list:last-child {
@@ -149,7 +151,7 @@ button:active,
 }
 
 .nav-ulist .nav-list:first-child {
-  border-left: 1px solid #bbbbbb;
+  border-left: 2px solid #bbbbbb;
 }
 
 /* Cards grid */

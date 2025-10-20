@@ -110,4 +110,5 @@ document.addEventListener("DOMContentLoaded", function () {
             c.style.transition = "opacity 0.5s";
         });
     }
+    
 });

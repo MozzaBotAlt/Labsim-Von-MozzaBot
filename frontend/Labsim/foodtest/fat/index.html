@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" href="/multimedia/images.webp" type="image/x-icon">
     <title>Fat Test</title>
+    <script src="script.js"></script>
+    <script type="module" src="cvs.js"></script>
 </head>
 <body>
     <div class="container">
@@ -18,6 +20,10 @@
         <div class="card">
             <h1>Test For Fat</h1>
             <iframe src="https://scratch.mit.edu/projects/1228680405/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+        </div><br>
+        <div style="margin-top:12px;">
+            <button class="btn" onclick="labsimAddObservation('trial','started')">Record Trial</button>
+            <button class="btn" onclick="exportResultsCSV()">Export results</button>
         </div>
     </div>
 

@@ -17,11 +17,27 @@
             <button style="margin: 10px 10px 10px;" class="btn" onclick="window.location.href='../index.html'">Home</button>
         </div>
         <div class="card">
-            <h1>Welcome to chapter selection page.</h1>
-            <p>Choose a chapter:</p>
-            <button class="btn" onclick="window.location.href='./bcs/index.html'">Blood Circulatory System</button><br>
-            <button class="btn" onclick="window.location.href='./foodtest/index.html'">Food Test</button>
-        </div>
+  <h1>LabSim — Food Tests</h1>
+  <p>Choose a test to begin. Use the toolbar to record observations and export results.</p>
+
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <a class="btn" href="foodtest/protein/index.html">Protein</a>
+    <a class="btn" href="foodtest/sugar/index.html">Sugar</a>
+    <a class="btn" href="foodtest/starch/index.html">Starch</a>
+    <a class="btn" href="foodtest/fat/index.html">Fat</a>
+  </div>
+
+  <div style="margin-top:12px;">
+    <button class="btn" onclick="labsimAddObservation('trial','started')">Record Trial</button>
+    <button class="btn" onclick="exportResultsCSV()">Export results</button>
+
+    <div class="judge-only" style="margin-top:8px;">
+      <strong>Judge tools:</strong>
+      <button class="btn" onclick="alert('Open rubric (placeholder)')">Open Rubric</button>
+    </div>
+  </div>
+</div>
+
     </div>
 
     <hr>

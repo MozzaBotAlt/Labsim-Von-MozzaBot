@@ -123,10 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // API Fetching
-  const button = document.getElementById('button');
-
-  button.addEventListener("click", fetchDate);
-
   const baseurl = "https://lvm-backend-j0ws.onrender.com/";
 
   // Fetch base URL and handle the response
@@ -143,11 +139,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   // Async function to fetch the date
+  fetchDate()
   async function fetchDate() {
     await new Promise(resolve => setTimeout(resolve, 2000)); // Delay the fetching
 
     try {
-      const response = await fetch(baseurl + 'date');
+      const response = await fetch(baseurl + 'api/date');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -155,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const serverDate = new Date(data.date); // Convert the ISO string to a Date object
       console.log('Date from server:', serverDate);
       // Display the date in the frontend
-      document.getElementById('date').textContent = serverDate.toLocaleString();
+      document.getElementById('date').textContent = serverDate;
     } catch (error) {
       console.error('Error fetching date:', error);
     }

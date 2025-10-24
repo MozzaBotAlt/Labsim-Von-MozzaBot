@@ -2,9 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     // Animate cards and buttons on load
-    const cards = document.querySelectorAll('.card');
-    const buttons = document.querySelectorAll('button, .btn');
-    cards.forEach((card, i) => {
+    (document.querySelectorAll('.card')).forEach((card, i) => {
         card.style.opacity = 0;
         card.style.transform = 'translateY(40px) scale(0.96)';
         setTimeout(() => {
@@ -13,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
             card.style.transform = 'translateY(0) scale(1)';
         }, 200 + i * 120);
     });
-    buttons.forEach((btn, i) => {
+    (document.querySelectorAll('button, .btn')).forEach((btn, i) => {
         btn.style.opacity = 0;
         btn.style.transform = 'scale(0.9)';
         setTimeout(() => {
@@ -32,8 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
     // Animated icon hover
-    const icons = document.querySelectorAll('i.fa-solid');
-    icons.forEach(icon => {
+    (document.querySelectorAll('i.fa-solid')).forEach(icon => {
         icon.addEventListener('mouseenter', () => {
             icon.style.transition = 'transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), color 0.3s';
             icon.style.transform = 'scale(1.2) rotate(-10deg)';
@@ -72,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Animate cards and buttons on load
     const cards = document.querySelectorAll('.card');
     const buttons = document.querySelectorAll('button, .btn');
-    cards.forEach((card, i) => {
+    (document.querySelectorAll('.card')).forEach((card, i) => {
         card.style.opacity = 0;
         card.style.transform = 'translateY(40px) scale(0.96)';
         setTimeout(() => {
@@ -81,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
             card.style.transform = 'translateY(0) scale(1)';
         }, 200 + i * 120);
     });
-    buttons.forEach((btn, i) => {
+    (document.querySelectorAll('button, .btn')).forEach((btn, i) => {
         btn.style.opacity = 0;
         btn.style.transform = 'scale(0.9)';
         setTimeout(() => {
@@ -101,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     // Animated icon hover
     const icons = document.querySelectorAll('i.fa-solid');
-    icons.forEach(icon => {
+    (document.querySelectorAll('i.fa-solid')).forEach(icon => {
         icon.addEventListener('mouseenter', () => {
             icon.style.transition = 'transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), color 0.3s';
             icon.style.transform = 'scale(1.2) rotate(-10deg)';

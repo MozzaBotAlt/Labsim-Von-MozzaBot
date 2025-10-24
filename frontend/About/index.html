@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/style.css">
     <title>About Labsim Von MozzaBot</title>
     <link rel="icon" href="/multimedia/image/images.webp" type="image/x-icon">
-
+    <script src="script.js"></script>
     <style>
         li {
             text-align: left;
@@ -33,6 +33,11 @@
     </header>
     <hr>
 -->
+    <header class="site-header">
+      <div class="header-inner">
+        <h1>About Labsim Von MozzaBot</h1>
+      </div>
+    </header>
     <div class="container">
         <div class="box">
             <i style="margin: 10px 10px 10px;" class="fa-solid fa-house"></i>
@@ -63,18 +68,19 @@
             </ol>
             <h2 style="text-decoration: underline;">Acknowledgements</h2>
             <ol>
-                <li>Ahmad Ammar Bin Zainuddin...                      Advisor</li>
+                <li>Ahmad 'Ammar Bin Zainuddin...                     Advisor</li>
                 <li>Azmeer bin Arof...                                Presenter</li>
                 <li>People of Maktab Rendah Sains Mara Langkawi...    Supporter</li>
             </ol>
              
-             <button style="margin: 10px 10px 10px;" id="button" type="button" class="btn">Date</button><br>
-             <button style="margin: 10px 10px 10px;" id="button2" type="button" class="btn">Data</button><br>
+            <button style="margin: 10px 10px 10px;" id="button" onclick="fetchDate();" type="button" class="btn">Date</button><br>
+            <button style="margin: 10px 10px 10px;" id="button2" onclick="fetchData();" type="button" class="btn">Data</button><br>
+        </div>
     </div>
 
     <hr style="text-align:left;margin-left:0"> 
     <script src="./script.js"></script>
-    <noscript>Enable JavaScipt for the best web experience!</noscript>
+    <meta http-equiv="refresh" content="0;url=/error.html">
     <footer class="site-footer">
       <div class="footer-inner">
         <p>&copy; 2025 Labsim Von MozzaBot. All rights reserved.</p>

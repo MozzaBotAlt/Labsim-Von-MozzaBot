@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/style.css">
     <title>About Labsim Von MozzaBot</title>
     <link rel="icon" href="/multimedia/image/images.webp" type="image/x-icon">
-    <script src="script.js"></script>
+<!--script src="script.js"></script>-->
     <style>
         li {
             text-align: left;
@@ -18,6 +18,17 @@
             margin: 10px 10px 10px;
         }
     </style>
+    <script>
+        document.getElementById('fetchBtn').addEventListener('click', async () => {
+            try {
+            const res = await fetch('http://localhost:3000/api/date');
+            const data = await res.json();
+            document.getElementById('output').innerText = data;
+            } catch (err) {
+            console.error('Fetch failed:', err);
+      }
+    });
+    </script>
 </head>
 <body>
     <!---<header>
@@ -73,8 +84,10 @@
                 <li>People of Maktab Rendah Sains Mara Langkawi...    Supporter</li>
             </ol>
              
-            <button style="margin: 10px 10px 10px;" id="button" onclick="fetchDate();" type="button" class="btn">Date</button><br>
-            <button style="margin: 10px 10px 10px;" id="button2" onclick="fetchData();" type="button" class="btn">Data</button><br>
+            <button style="margin: 10px 10px 10px;" id="button" type="button" class="btn">Date</button><br>
+            <button style="margin: 10px 10px 10px;" id="button2" type="button" class="btn">Data</button><br>
+            <button id="fetchBtn">Get Date Token</button>
+            <p id="output">Waiting...</p>
         </div>
     </div>
 

@@ -1,5 +1,6 @@
-// Add fading effects when switching tabs
+console.info("Copyright (C) 2025  Ali Mozzabot I, This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions. ")
 
+// Add fading effects when switching tabs
 document.addEventListener("DOMContentLoaded", function () {
     // Animate cards and buttons on load
     (document.querySelectorAll('.card')).forEach((card, i) => {

@@ -93,7 +93,7 @@
     <script>
         document.getElementById('fetchBtn').addEventListener('click', async () => {
             try {
-            const res = await fetch('http://localhost:3000/api/date');
+            const res = await fetch('https://lvm-backend-j0ws.onrender.com/api/date');
             const data = await res.json();
             document.getElementById('output').innerText = data;
             } catch (err) {

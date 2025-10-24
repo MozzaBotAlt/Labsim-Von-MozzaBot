@@ -94,7 +94,7 @@
         document.getElementById('fetchBtn').addEventListener('click', async () => {
             try {
             const res = await fetch('https://lvm-backend-j0ws.onrender.com/api/date');
-            const data = await res.json();
+            const data = await res.text();
             document.getElementById('output').innerText = data;
             } catch (err) {
             console.error('Fetch failed:', err);

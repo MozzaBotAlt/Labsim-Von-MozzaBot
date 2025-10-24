@@ -18,17 +18,6 @@
             margin: 10px 10px 10px;
         }
     </style>
-    <script>
-        document.getElementById('fetchBtn').addEventListener('click', async () => {
-            try {
-            const res = await fetch('http://localhost:3000/api/date');
-            const data = await res.json();
-            document.getElementById('output').innerText = data;
-            } catch (err) {
-            console.error('Fetch failed:', err);
-      }
-    });
-    </script>
 </head>
 <body>
     <!---<header>
@@ -100,5 +89,17 @@
         <p>GNU GPL License v3.0 — Developed by Long Infinity</p>
       </div>
     </footer>
+
+    <script>
+        document.getElementById('fetchBtn').addEventListener('click', async () => {
+            try {
+            const res = await fetch('http://localhost:3000/api/date');
+            const data = await res.json();
+            document.getElementById('output').innerText = data;
+            } catch (err) {
+            console.error('Fetch failed:', err);
+            }
+        });
+    </script>
 </body>
 </html>

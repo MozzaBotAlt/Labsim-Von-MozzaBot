@@ -2,55 +2,55 @@ console.info("Copyright (C) 2025  Ali Mozzabot I, This program comes with ABSOLU
 
 // Add fading effects when switching tabs
 document.addEventListener("DOMContentLoaded", function () {
-    // Animate cards and buttons on load
-    const cards = document.querySelectorAll('.card');
-    const buttons = document.querySelectorAll('button, .btn');
-    cards.forEach((card, i) => {
-        card.style.opacity = 0;
-        card.style.transform = 'translateY(40px) scale(0.96)';
-        setTimeout(() => {
-            card.style.transition = 'opacity 0.7s cubic-bezier(.68,-0.55,.27,1.55), transform 0.7s cubic-bezier(.68,-0.55,.27,1.55)';
-            card.style.opacity = 1;
-            card.style.transform = 'translateY(0) scale(1)';
-        }, 200 + i * 120);
-    });
-    buttons.forEach((btn, i) => {
-        btn.style.opacity = 0;
-        btn.style.transform = 'scale(0.9)';
-        setTimeout(() => {
-            btn.style.transition = 'opacity 0.5s, transform 0.5s cubic-bezier(.68,-0.55,.27,1.55)';
-            btn.style.opacity = 1;
-            btn.style.transform = 'scale(1)';
-        }, 400 + i * 80);
-        // Ripple/glow effect on click
-        btn.addEventListener('click', function(e) {
-            const ripple = document.createElement('span');
-            ripple.className = 'ripple-effect';
-            ripple.style.left = e.offsetX + 'px';
-            ripple.style.top = e.offsetY + 'px';
-            btn.appendChild(ripple);
-            setTimeout(() => ripple.remove(), 600);
+        // Animate cards and buttons on load
+        const cards = document.querySelectorAll('.card');
+        const buttons = document.querySelectorAll('button, .btn');
+        cards.forEach((card, i) => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(40px) scale(0.96)';
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.7s cubic-bezier(.68,-0.55,.27,1.55), transform 0.7s cubic-bezier(.68,-0.55,.27,1.55)';
+                card.style.opacity = 1;
+                card.style.transform = 'translateY(0) scale(1)';
+            }, 200 + i * 120);
         });
-    });
-    // Animated icon hover
-    const icons = document.querySelectorAll('i.fa-solid');
-    icons.forEach(icon => {
-        icon.addEventListener('mouseenter', () => {
-            icon.style.transition = 'transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), color 0.3s';
-            icon.style.transform = 'scale(1.2) rotate(-10deg)';
-            icon.style.color = '#00fff7';
+        buttons.forEach((btn, i) => {
+            btn.style.opacity = 0;
+            btn.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                btn.style.transition = 'opacity 0.5s, transform 0.5s cubic-bezier(.68,-0.55,.27,1.55)';
+                btn.style.opacity = 1;
+                btn.style.transform = 'scale(1)';
+            }, 400 + i * 80);
+            // Ripple/glow effect on click
+            btn.addEventListener('click', function (e) {
+                const ripple = document.createElement('span');
+                ripple.className = 'ripple-effect';
+                ripple.style.left = e.offsetX + 'px';
+                ripple.style.top = e.offsetY + 'px';
+                btn.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
         });
-        icon.addEventListener('mouseleave', () => {
-            icon.style.transform = 'scale(1) rotate(0deg)';
-            icon.style.color = '';
+        // Animated icon hover
+        const icons = document.querySelectorAll('i.fa-solid');
+        icons.forEach(icon => {
+            icon.addEventListener('mouseenter', () => {
+                icon.style.transition = 'transform 0.4s cubic-bezier(.68,-0.55,.27,1.55), color 0.3s';
+                icon.style.transform = 'scale(1.2) rotate(-10deg)';
+                icon.style.color = '#00fff7';
+            });
+            icon.addEventListener('mouseleave', () => {
+                icon.style.transform = 'scale(1) rotate(0deg)';
+                icon.style.color = '';
+            });
         });
-    });
-    // ...existing code...
-    // Ripple effect CSS (inject once)
-    if (!document.getElementById('ripple-style')) {
-        const rippleStyle = document.createElement('style');
-        rippleStyle.id = 'ripple-style';
-        rippleStyle.innerHTML = `
+        // ...existing code...
+        // Ripple effect CSS (inject once)
+        if (!document.getElementById('ripple-style')) {
+            const rippleStyle = document.createElement('style');
+            rippleStyle.id = 'ripple-style';
+            rippleStyle.innerHTML = `
         .ripple-effect {
             position: absolute;
             width: 40px;
@@ -68,95 +68,90 @@ document.addEventListener("DOMContentLoaded", function () {
             100% { opacity: 0; transform: translate(-50%, -50%) scale(2.8); }
         }
         `;
-        document.head.appendChild(rippleStyle);
-    }
-    // Assume tabs are <a> elements inside nav, and tab contents have class "tab-content"
-    const tabLinks = document.querySelectorAll("nav ul li a");
-    const tabContents = document.querySelectorAll(".tab-content");
+            document.head.appendChild(rippleStyle);
+        }
+        // Assume tabs are <a> elements inside nav, and tab contents have class "tab-content"
+        const tabLinks = document.querySelectorAll("nav ul li a");
+        const tabContents = document.querySelectorAll(".tab-content");
 
-    function showTab(targetId) {
-        tabContents.forEach(content => {
-            if (content.id === targetId) {
-                content.style.opacity = 0;
-                content.style.display = "block";
-                setTimeout(() => {
+        function showTab(targetId) {
+            tabContents.forEach(content => {
+                if (content.id === targetId) {
+                    content.style.opacity = 0;
+                    content.style.display = "block";
+                    setTimeout(() => {
+                        content.style.transition = "opacity 0.5s";
+                        content.style.opacity = 1;
+                    }, 10);
+                } else {
                     content.style.transition = "opacity 0.5s";
-                    content.style.opacity = 1;
-                }, 10);
-            } else {
-                content.style.transition = "opacity 0.5s";
-                content.style.opacity = 0;
-                setTimeout(() => {
-                    content.style.display = "none";
-                }, 500);
-            }
+                    content.style.opacity = 0;
+                    setTimeout(() => {
+                        content.style.display = "none";
+                    }, 500);
+                }
+            });
+        }
+
+        tabLinks.forEach(link => {
+            link.addEventListener("click", function (e) {
+                const targetId = this.getAttribute("href").replace("#", "");
+                if (document.getElementById(targetId)) {
+                    e.preventDefault();
+                    showTab(targetId);
+                }
+            });
         });
-    }
 
-    tabLinks.forEach(link => {
-        link.addEventListener("click", function (e) {
-            const targetId = this.getAttribute("href").replace("#", "");
-            if (document.getElementById(targetId)) {
-                e.preventDefault();
-                showTab(targetId);
-            }
-        });
-    });
-
-    // Optional: Show the first tab by default
-    if (tabContents.length > 0) {
-        tabContents.forEach((c, i) => {
-            c.style.opacity = i === 0 ? 1 : 0;
-            c.style.display = i === 0 ? "block" : "none";
-            c.style.transition = "opacity 0.5s";
-        });
-    }
+        // Optional: Show the first tab by default
+        if (tabContents.length > 0) {
+            tabContents.forEach((c, i) => {
+                c.style.opacity = i === 0 ? 1 : 0;
+                c.style.display = i === 0 ? "block" : "none";
+                c.style.transition = "opacity 0.5s";
+            });
+        }
 
 
-    // Fetch data URL
-    const button = document.getElementById('button');
-    const button2 = document.getElementById('button2');
+        // Fetch data URL
+        const baseurl = "https://lvm-backend-j0ws.onrender.com/";
 
-    button2.addEventListener("click", fetchData());
-    button.addEventListener("click", fetchDate());
+        fetchData()
+        async function fetchData() {
+            await new Promise(resolve => setTimeout(resolve, 2000));
 
-    const baseurl = "https://lvm-backend-j0ws.onrender.com/";
-
-    async function fetchData() {
-        await new Promise(resolve => setTimeout(resolve, 2000));
-
-        try {
-            const response = await fetch(baseurl + 'api/data');
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const data = await response.json();
-            const serverData = data;
-            console.log('Data from server:', serverData);
-            } catch (error) { console.error(error) }
-    } 
-
-    // function to fetch the date
-        document.getElementById('fetchBtn').addEventListener('click', async () => {
             try {
-            const res = await fetch('https://lvm-backend-j0ws.onrender.com/api/date');
-            const data = await res.text();
-            document.getElementById('output').innerText = data;
-            } catch (err) {
-            console.error('Fetch failed:', err);
-            }
-        });
+                const response = await fetch(baseurl + 'api/data');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                const serverData = data;
+                console.log('Data from server:', serverData);
+            } catch (error) { console.error(error); }
+        }
 
-    /*
-    document.getElementById('fetchDate').addEventListener('click', async () => {
-      try {
-        const res = await fetch('http://localhost:3000/api/date');
-        const data = await res.json();
-        console.log(data)
-      } catch (err) {
-        console.error('Fetch failed:', err);
-      }
+        // function to fetch the date
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fetch data from the Express backend
+            fetch(baseurl + 'api/date')
+                .then(response => {
+                    // Check if the response was successful
+                    if (!response.ok) {
+                        throw new Error('Cannot get api/date');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Display the date on the webpage
+                    const dateDisplay = document.getElementById('output');
+                    const date = new Date(data.date);
+                    dateDisplay.textContent = date.toLocaleString();
+                })
+                .catch(error => {
+                    // Handle any errors
+                    console.error('Error fetching the date:', error);
+                    document.getElementById('output').textContent = 'Failed to fetch date.';
+                });
+        });
     });
-    */
-  
-});

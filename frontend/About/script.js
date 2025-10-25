@@ -148,6 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const dateDisplay = document.getElementById('output');
                     const date = new Date(data.date);
                     dateDisplay.textContent = date.toLocaleString();
+                    console.log(dateDisplay);
                 })
                 .catch(error => {
                     // Handle any errors

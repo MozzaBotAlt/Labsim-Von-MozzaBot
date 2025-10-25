@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
             await new Promise(resolve => setTimeout(resolve, 2000));
 
             try {
-                const response = await fetch(baseurl + 'api/data');
+                const response = await fetch(baseurl + 'api/dev');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -131,29 +131,14 @@ document.addEventListener("DOMContentLoaded", function () {
             } catch (error) { console.error(error); }
         }
 
-        // function to fetch the date
-        document.addEventListener('DOMContentLoaded', () => {
-            const baseurl = "https://lvm-backend-j0ws.onrender.com/";
-            // Fetch data from the Express backend
-            fetch(baseurl + 'api/date')
-                .then(response => {
-                    // Check if the response was successful
-                    if (!response.ok) {
-                        throw new Error('Cannot get api/date');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Display the date on the webpage
-                    const dateDisplay = document.getElementById('output');
-                    const date = new Date(data.date);
-                    dateDisplay.textContent = date.toLocaleString();
-                    console.log(dateDisplay);
-                })
-                .catch(error => {
-                    // Handle any errors
-                    console.error('Error fetching the date:', error);
-                    document.getElementById('output').textContent = 'Failed to fetch date.';
-                });
-        });
+        // Fetch data from the Express backend
+        async function fetchDate() {
+            const res = await fetch(baseurl + 'api/date');
+            const data = await res.json();
+
+            const formattedDate = new Date(data.createdAt).toLocaleString();
+            document.getElementById('date').textContent = formattedDate;
+            console.log(formattedDate)
+        }
+        fetchDate();
     });

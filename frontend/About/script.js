@@ -133,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // function to fetch the date
         document.addEventListener('DOMContentLoaded', () => {
+            const baseurl = "https://lvm-backend-j0ws.onrender.com/";
             // Fetch data from the Express backend
             fetch(baseurl + 'api/date')
                 .then(response => {

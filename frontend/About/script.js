@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (isNaN(date)) {
                     document.getElementById('date').textContent = 'Invalid date received';
                 } else {
-                    document.getElementById('date').textContent = date();
+                    document.getElementById('date').textContent = date.toString();
                 }
                 console.log(date)
             } catch (error) { console.error(error); }

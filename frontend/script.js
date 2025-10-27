@@ -139,24 +139,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   // Async function to fetch the date
-  fetchDate()
-  async function fetchDate() {
-    await new Promise(resolve => setTimeout(resolve, 2000)); // Delay the fetching
-
-    try {
-      const response = await fetch(baseurl + 'api/date');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      const serverDate = new Date(data.date); // Convert the ISO string to a Date object
-      console.log('Date from server:', serverDate);
-      // Display the date in the frontend
-      document.getElementById('date').textContent = serverDate;
-    } catch (error) {
-      console.error('Error fetching date:', error);
-    }
-  }
+  // Fetch data from the Express backend
+        async function fetchDate() {
+            try {
+                const res = await fetch(baseurl + 'api/date');
+                const data = await res.json();
+                console.log(data);
+                const date = new Date(data.date);
+                if (isNaN(date)) {
+                    document.getElementById('date').textContent = 'Invalid date received';
+                } else {
+                    document.getElementById('date').textContent = date();
+                }
+                console.log(date)
+            } catch (error) { console.error(error); }
+        }
+        fetchDate();
 
   /*
   window.onload = function() {

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" href="/multimedia/image/images.webp" type="image/x-icon">
     <title>Fat Test</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script type="module" src="cvs.js"></script>
 </head>
 <body>
@@ -24,6 +24,9 @@
         <div style="margin-top:12px;">
             <button class="btn" onclick="labsimAddObservation('trial','started')">Record Trial</button>
             <button class="btn" onclick="exportResultsCSV()">Export results</button>
+        </div>
+        <div style="margin-top:12px;">
+            <button class="btn" onclick="">Export results</button>
         </div>
     </div>
 

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/style.css">
     <link rel="icon" href="/multimedia/image/images.webp" type="image/x-icon">
-    <title>Chapter Menu</title>
+    <title>Chapter 4: Biological molecules</title>
     
 </head>
 <body>
@@ -16,26 +16,21 @@
             <button style="margin: 10px 10px 10px;" class="btn" onclick="window.location.href='../index.html'">Back</button>
         </div>
         <div class="card">
-            <h1>LabSim — Food Tests</h1>
+            <h1>LabSim — Chapter 4: Biological molecules</h1>
             <p>Choose a test to begin. Use the toolbar to record observations and export results.</p>
 
             <div style="display:flex;gap:8px;flex-wrap:wrap">
-                <a class="btn" href="foodtest/protein/index.html">Protein</a>
-                <a class="btn" href="foodtest/sugar/index.html">Sugar</a>
-                <a class="btn" href="foodtest/starch/index.html">Starch</a>
-                <a class="btn" href="foodtest/fat/index.html">Fat</a>
-            </div>
-
-            <div style="margin-top:12px;">
-                <button class="btn" onclick="labsimAddObservation('trial','started')">Record Trial</button>
-                <button class="btn" onclick="exportResultsCSV()">Export results</button>
+                <button class="btn" type="button" onclick="window.location.href='starch/index.html'">Starch Test</button><br>
+                <button class="btn" type="button" onclick="window.location.href='fat/index.html'">Fat Test</button><br>
+                <button class="btn" type="button" onclick="window.location.href='sugar/index.html'">Reducing Sugar Test</button><br>
+                <button class="btn" type="button" onclick="window.location.href='protein/index.html'">Protein Test</button>
             </div>
         </div>
     </div>
 
     <hr>
-    <script src="script.js"></script>
-    <noscript>Enable JavaScipt for the best web experience!</noscript>
+    <script src="../script.js" defer></script>
+    <noscript><meta http-equiv="refresh" content="0;url=/error.html"></noscript>
     <footer class="site-footer">
       <div class="footer-inner">
         <p>&copy; 2025 Labsim Von MozzaBot. All rights reserved.</p>

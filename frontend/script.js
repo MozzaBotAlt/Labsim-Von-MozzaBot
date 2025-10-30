@@ -7,7 +7,6 @@ inject();
 
 console.info("Copyright (C) 2025  Ali Mozzabot I, This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions. ")
 
-document.addEventListener("DOMContentLoaded", function () {
   // Animate cards and buttons on load
   const cards = document.querySelectorAll(".card");
   const buttons = document.querySelectorAll("button, .btn");
@@ -172,4 +171,3 @@ document.addEventListener("DOMContentLoaded", function () {
         colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a']
     });
   };  */
-});

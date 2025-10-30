@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = '/result/fat_test.csv';
+    //a.download = '/multimedia/report' + [chapter] + ;
     a.click();
     URL.revokeObjectURL(url);
   };
 
   // expose helper for pages:
-  window.labsimAddObservation = (label, value) => addResult({ timestamp: new Date().toISOString(), label, value });
+  window.labsimAddObservation = (label, value) => addResult({ timestamp: new Date().toString(), label, value });
 });

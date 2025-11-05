@@ -7,6 +7,7 @@
 </div>
 
 
+# Info
 
 Labsim Von MozzaBot was created by Long Infinity, Lithium class for MozzaBot Development Division(Education) and MRSM Langkawi(Biology Unit) for ScienceShine.
 Usage of this software is for educational purposes and refer to other references for further understanding and information. It uses IGCSE Biology Textbook as reference.
@@ -14,10 +15,6 @@ Usage of this software is for educational purposes and refer to other references
 ## URL to Simulator
 URL to Labsim:
 - [Finalized](labsim.vercel.app)
-
-Experiment branches:
-- [UI Enhancement](tinyurl.com/labsim-gamma)
-- [Backend](tinyurl.com/labsim-backend)
 
 ## Bugs?
 Bugs? Any ideas for improvements? Feedback?
@@ -32,7 +29,7 @@ Credits:
 
 ## Achnowledgements:
 1. Ahmad Ammar Bin Zainuddin...                      Advisor
-2. Azmeer bin Arof...                                Presenter
+2. Muhammad Azmeer bin Arof...                       Presenter
 3. People of Maktab Rendah Sains Mara Langkawi...    Supporter
 
 ## Notes

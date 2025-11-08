@@ -130,8 +130,10 @@ console.info("Copyright (C) 2025  Ali Mozzabot I, This program comes with ABSOLU
   })
     .then(response => {
     // Log status code and status text
-    console.log(`Status Code: ${response.status}`);
-    console.log(`Status Text: ${response.statusText}`);
+      if (response.status == 200) {
+        console.log(`Status Code: ${response.status}, OK`);
+        return 
+      } else { console.warn(`Status Code: 501, Internal Server Error`); }
   })
     .catch(error => {
       console.error('Error fetching base URL:', error);

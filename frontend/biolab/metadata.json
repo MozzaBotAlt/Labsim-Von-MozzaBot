@@ -1,0 +1,5 @@
+{
+  "name": "BioLab: Food Tests Simulator",
+  "description": "A realistic IGCSE Biology lab simulator for food tests (Benedict's, Iodine, Biuret, Ethanol) with safety consequences.",
+  "requestFramePermissions": []
+}

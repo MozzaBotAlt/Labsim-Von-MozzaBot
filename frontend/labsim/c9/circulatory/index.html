@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Blood Circulation Simulator</title>
+</head>
+<body>
+  <div class="simulator-container">
+    <!-- Header -->
+    <header class="sim-header">
+      <button class="btn" onclick="window.location.href='../index.html'">← Back</button>
+      <h1>🫀 Blood Circulation Simulator</h1>
+      <div class="header-info">
+        <span id="pulseRate">Pulse: 72 bpm</span>
+        <button class="btn btn-small" onclick="togglePulse()">▶ Play</button>
+      </div>
+    </header>
+
+    <div class="sim-content">
+      <!-- Main Diagram -->
+      <div class="diagram-container">
+        <svg id="circulationDiagram" viewBox="0 0 800 600" class="circulation-svg">
+          <!-- Background -->
+          <rect width="800" height="600" fill="#f0f9ff" />
+
+          <!-- Lungs -->
+          <g id="lungs">
+            <ellipse cx="150" cy="150" rx="80" ry="120" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" />
+            <text x="150" y="160" text-anchor="middle" font-size="24">🫁 Lungs</text>
+            <text x="150" y="190" text-anchor="middle" font-size="12" fill="#0284c7" font-weight="bold">Oxygenation</text>
+          </g>
+
+          <!-- Heart -->
+          <g id="heart" class="interactive-element" onclick="clickElement('heart')">
+            <circle cx="400" cy="300" r="70" fill="#fce7f3" stroke="#db2777" stroke-width="3" />
+            <text x="400" y="310" text-anchor="middle" font-size="48">❤️</text>
+            <text x="400" y="380" text-anchor="middle" font-size="12" fill="#db2777" font-weight="bold">Pumping Station</text>
+          </g>
+
+          <!-- Body Tissues -->
+          <g id="body">
+            <rect x="600" y="150" width="150" height="250" rx="20" fill="#fef2f2" stroke="#dc2626" stroke-width="2" />
+            <text x="677" y="250" text-anchor="middle" font-size="20">🫀</text>
+            <text x="677" y="280" text-anchor="middle" font-size="12" fill="#dc2626" font-weight="bold">Body Cells</text>
+            <text x="677" y="300" text-anchor="middle" font-size="10" fill="#dc2626">Oxygen Uptake</text>
+          </g>
+
+          <!-- Blood Vessel Paths -->
+          <!-- Oxygenated blood (red) from lungs to heart -->
+          <path id="path-lungs-heart" d="M 230 150 Q 315 200 330 260" stroke="#dc2626" stroke-width="8" fill="none" marker-end="url(#arrowRed)" />
+
+          <!-- Deoxygenated blood (blue) from body to heart -->
+          <path id="path-body-heart" d="M 600 300 Q 500 300 470 300" stroke="#0284c7" stroke-width="8" fill="none" marker-end="url(#arrowBlue)" />
+
+          <!-- Oxygenated blood (red) from heart to body -->
+          <path id="path-heart-body" d="M 470 340 Q 500 350 600 280" stroke="#dc2626" stroke-width="8" fill="none" marker-end="url(#arrowRed)" />
+
+          <!-- Deoxygenated blood (blue) from heart to lungs -->
+          <path id="path-heart-lungs" d="M 330 340 Q 270 300 230 200" stroke="#0284c7" stroke-width="8" fill="none" marker-end="url(#arrowBlue)"  />
+
+          <!-- Arrow markers -->
+          <defs>
+            <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="#dc2626" />
+            </marker>
+            <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L0,6 L9,3 z" fill="#0284c7" />
+            </marker>
+          </defs>
+
+          <!-- Blood cells animation -->
+          <g id="bloodCells"></g>
+        </svg>
+      </div>
+
+      <!-- Information Panels -->
+      <div class="info-panels">
+        <div class="panel" id="panel-oxygenated">
+          <h3>🔴 Oxygenated Blood</h3>
+          <p><strong>Rich in oxygen</strong></p>
+          <p>Carries oxygen from the lungs to all body cells</p>
+          <p><strong>Color:</strong> Bright red</p>
+          <p><strong>Route:</strong> Lungs → Heart → Body</p>
+        </div>
+
+        <div class="panel" id="panel-deoxygenated">
+          <h3>🔵 Deoxygenated Blood</h3>
+          <p><strong>Low in oxygen</strong></p>
+          <p>Returns from body cells to the lungs to get oxygenated</p>
+          <p><strong>Color:</strong> Dark blue/purple</p>
+          <p><strong>Route:</strong> Body → Heart → Lungs</p>
+        </div>
+
+        <div class="panel" id="panel-heart">
+          <h3>❤️ The Heart</h3>
+          <p><strong>4-chambered pump</strong></p>
+          <p><strong>Left side:</strong> Pumps oxygenated blood to body</p>
+          <p><strong>Right side:</strong> Pumps deoxygenated blood to lungs</p>
+          <p><strong>Role:</strong> Maintains continuous circulation</p>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls-section">
+        <h3>Pulse Control</h3>
+        <div class="pulse-controls">
+          <label>
+            Heart Rate:
+            <input type="range" id="pulseSlider" min="40" max="160" value="72" oninput="updatePulse(this.value)">
+            <span id="pulseValue">72 bpm</span>
+          </label>
+        </div>
+
+        <h3>Learning Modes</h3>
+        <div class="button-group">
+          <button class="btn btn-outline" onclick="highlightPath('oxygenated')">Trace Oxygenated Path</button>
+          <button class="btn btn-outline" onclick="highlightPath('deoxygenated')">Trace Deoxygenated Path</button>
+          <button class="btn btn-outline" onclick="resetHighlight()">Reset</button>
+        </div>
+
+        <h3>Test Your Knowledge</h3>
+        <button class="btn btn-primary" onclick="startQuiz()">Take Quiz</button>
+      </div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal hidden">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeQuiz()">✕</button>
+        <h2>Blood Circulation Quiz</h2>
+        <div id="quizContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioLab Simulator - Food Testing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Welcome Modal -->
+  <div id="welcomeModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="beaker-icon">🧪</div>
+        <h1>Welcome to BioLab Simulator</h1>
+        <p>Perform standard food tests (Benedict's, Iodine, Biuret, Ethanol) in a safe, virtual environment.</p>
+      </div>
+      <div class="safety-alert">
+        <span class="warning-icon">⚠️</span>
+        <div>
+          <p class="alert-title">Safety First</p>
+          <p>Always wear safety goggles. Be careful with heat sources and flammable liquids.</p>
+        </div>
+      </div>
+      <button id="enterLabBtn" class="btn btn-primary">Put on Goggles & Enter Lab</button>
+    </div>
+  </div>
+
+  <!-- Failure Modal -->
+  <div id="failureModal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="failure-icon">🔥</div>
+        <h2>Experiment Failed</h2>
+        <p id="failureMessage"></p>
+      </div>
+      <button id="restartBtn" class="btn btn-danger">Clean Up & Restart</button>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container hidden" id="mainContainer">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="header-icon">🧪</div>
+        <div>
+          <h1 class="app-title">BioLab Simulator</h1>
+          <p class="app-subtitle">IGCSE Biology 2026</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <button id="gogglesBtn" class="goggles-btn" title="Toggle safety goggles">
+          <span class="goggles-status">Goggles OFF</span>
+        </button>
+        <a href="../index.html" class="btn btn-secondary">← Back to Chapter 4</a>
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="section">
+          <h2 class="section-title">Experiments</h2>
+          <div class="experiment-list" id="experimentList"></div>
+        </div>
+
+        <div class="section" id="procedureSection" style="display: none;">
+          <h3 class="section-title">Procedure</h3>
+          <div class="procedure-box">
+            <ol class="procedure-steps" id="procedureSteps"></ol>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main Workspace -->
+      <div class="workspace">
+        <!-- Placeholder -->
+        <div id="placeholderContent" class="placeholder">
+          <div class="placeholder-icon">🧪</div>
+          <p class="placeholder-title">Select an experiment to begin</p>
+          <p class="placeholder-subtitle">Choose from the list on the left</p>
+        </div>
+
+        <!-- Actual Workspace (hidden until selection) -->
+        <div id="workspaceContent" class="workspace-content hidden">
+          <!-- Left Panel: Reagents -->
+          <div class="reagents-section">
+            <div class="reagent-panel">
+              <h3 class="reagent-title">Samples</h3>
+              <div class="reagent-grid" id="samplesPanel"></div>
+            </div>
+            <div class="reagent-panel">
+              <h3 class="reagent-title">Reagents</h3>
+              <div class="reagent-grid" id="reagentsPanel"></div>
+            </div>
+          </div>
+
+          <!-- Center: Test Tube -->
+          <div class="bench-section">
+            <div class="controls-top">
+              <button id="shakeBtn" class="btn btn-secondary btn-small">↻ Shake</button>
+              <button id="waterBathBtn" class="btn btn-secondary btn-small">🌊 Water Bath</button>
+              <button id="burnerBtn" class="btn btn-secondary btn-small btn-danger-small">🔥 Burner</button>
+            </div>
+
+            <div class="tube-container">
+              <div class="test-tube" id="testTube">
+                <div class="tube-body">
+                  <div class="tube-liquid" id="tubeLiquid"></div>
+                  <div class="tube-bubbles" id="tubeBubbles"></div>
+                </div>
+                <div class="tube-rim"></div>
+              </div>
+              <div class="tube-stand">
+                <div class="stand-base"></div>
+              </div>
+            </div>
+
+            <div class="controls-bottom">
+              <button id="emptyBtn" class="btn btn-outline btn-small">🗑️ Empty Tube</button>
+            </div>
+          </div>
+
+          <!-- Right: Lab Notebook -->
+          <div class="notebook-section">
+            <div class="notebook-header">
+              <h3>Lab Notebook</h3>
+              <span class="time-display" id="timeDisplay"></span>
+            </div>
+            <div class="notebook-content" id="notebookContent">
+              <div class="notebook-placeholder">
+                <p>Actions will be recorded here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

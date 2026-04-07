@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="/multimedia/image/images.webp" type="image/x-icon">
     <title>Other Simulators</title>
 </head>
@@ -13,22 +12,15 @@
     <div class="container">
       <div class="box">
           <i style="margin: 10px 10px 10px;" class="fa-solid fa-house"></i>
-          <button style="margin: 10px 10px 10px;" class="btn" onclick="window.location.href='../index.html'">Home</button>
+          <button style="margin: 10px 10px 10px;" class="btn" onclick="window.location.href='../index.html'">Back</button>
       </div>
       <div class="card">
           <h1>Educational Games</h1>
-          <p>Choose a module to begin. All simulators are interactive and designed for IGCSE Biology and Physics students.</p>
+          <p>Choose a simulator to begin. All simulators are interactive and designed for IGCSE Biology and Physics students.</p>
 
-          <div class="modules-grid">
-            <a href="./emf/index.html" class="module-card">
-              <div class="module-title">EMF Explorer Game</div>
-              <div class="module-desc">Interactive game teaching Electromotive Force (EMF) and Potential Difference. Become a charge in a circuit!</div>
-            </a>
-
-            <a href="./rocketsimulator/index.html" class="module-card">
-              <div class="module-badge">Rocket Simulator</div>
-              <div class="module-desc">Learn how to make sugar rockets precisely to not blow up things</div>
-            </a>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn" type="button" onclick="window.location.href='./emf/index.html'">⚡ EMF Explorer Game</button>
+            <button class="btn" type="button" onclick="window.location.href='./rocketsimulator/index.html'">🚀 Rocket Simulator</button>
           </div>
       </div>
     </div>

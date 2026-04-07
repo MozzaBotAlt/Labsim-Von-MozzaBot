@@ -168,7 +168,7 @@ console.info("Copyright (C) 2025  Ali Mozzabot I, This program comes with ABSOLU
     myConfetti({
         particleCount: 550,
         spread: 400,
-        origin: { y: 0.6 },
+        origin: { x: 0.5, y: 0.5 },
         shapes: ['square', 'circle', 'triangle', 'star'],
         colors: ['blue', 'red', '#000000', '#ffffff', 'yellow']
     });

@@ -156,7 +156,7 @@ console.info("Copyright (C) 2025  Ali Mozzabot I, This program comes with ABSOLU
   }
   fetchDate();
 
-  /*
+  //confetti
   window.onload = function() {
     const canvas = document.getElementById('confetti-canvas');
     const myConfetti = confetti.create(canvas, {
@@ -166,10 +166,10 @@ console.info("Copyright (C) 2025  Ali Mozzabot I, This program comes with ABSOLU
 
     // Launch confetti from a central point when the page loads
     myConfetti({
-        particleCount: 450,
-        spread: 350,
+        particleCount: 550,
+        spread: 400,
         origin: { y: 0.6 },
-        shapes: ['square', 'circle'],
-        colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a']
+        shapes: ['square', 'circle', 'triangle', 'star'],
+        colors: ['blue', 'red', '#000000', '#ffffff', 'yellow']
     });
-  };  */
+  };

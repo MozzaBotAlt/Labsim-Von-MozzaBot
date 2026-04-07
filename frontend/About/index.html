@@ -37,48 +37,79 @@
         <h1>About Labsim Von MozzaBot</h1>
       </div>
     </header>
-    <div class="container">
-        <div class="box">
-            <i style="margin: 10px 10px 10px;" class="fa-solid fa-house"></i>
-            <button style="margin: 10px 10px 10px;" class="btn" onclick="window.location.href='../index.html'">Home</button>
-        </div>
-        <div class="box">
-            <h2>Gallery of LVM</h2>
-            <button class="btn" onclick="window.location.href='./gallery/index.html'">Gallery!</button>
-        </div>
 
-        <div class="card">
-            <h1 style="text-decoration: underline;">About Labsim</h1>
-            <p>LabSim was created by three developers from MRSM Langkawi. It is created to help users learn science and replicate experiment seamlessly.This simulator is created through scratch platform to allow students replicate lab experiments accurately through a 2D graphics. Labsim is using IGCSE Biology textbook as reference. Biology teachers can also use this platform in class as study aids to help students comprehend the topic more or if the teacher has no materials or apparatuses available.</p>
-        </div>
-        <hr style="text-align:left;margin-left:0"> 
+    <main class="container" role="main">
+      <section class="cards" aria-label="Main navigation">
+        <article
+          class="card"
+          role="button"
+          tabindex="0"
+          onclick="location.href='../index.html'"
+          onkeypress="if(event.key==='Enter') location.href='..index.html'"
+        >
+          <i style="margin: 10px 10px 10px;" class="fa-solid fa-house"></i>
+          <h2>To LabSim</h2>
+          <p class="card-desc">Home</p>
+          <button
+            class="btn"
+            onclick="window.location.href='..index.html'"
+          >
+            Home
+          </button>
+        </article>
 
-        <div class="card">
-            <h1 style="text-decoration: underline;">Objectives</h1>
+        <article
+            class="card"
+            role="button"
+            tabindex="0"
+            onclick="location.href='./gallery/index.html'"
+            onkeypress="if(event.key==='Enter') location.href='./gallery/index.html'"
+        >
+            <i class="fa-regular fa-image" aria-hidden="true"></i>
+            <h2>Archive</h2>
+            <p class="card-desc">Labsim BTS of making it possible.</p>
+            <button
+            class="btn"
+            onclick="window.location.href='./gallery/index.html'"
+            >
+            Archive
+            </button>
+        </article>
+
+        <article class="card" role="article" tabindex="0" >
+            <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+            <h2>About Labsim</h2>
+            <p>Labsim was created by three developers from MRSM Langkawi. It is created to help users replicate experiment seamlessly.This simulator is created through multiple platforms to allow students replicate lab experiments accurately. Labsim is using IGCSE Biology 2026 syllabus as reference. Biology teachers can also use this platform in class as study aids to help students comprehend the topic more or if the teacher has no materials or apparatuses available.</p>
+            <h3 style="text-decoration: underline;">Objectives</h3>
             <ol>
                 <li>Develop an interactive, user-friendly, and scientifically accurate simulator.</li>
-                <li>Allow students to conduct food tests (starch, protein, reducing sugar, fat) in a digital environment</li>
-                <li>Replicate the real lab experience virtually while adding educational and competition value.</li>
+                <li>Allow students to conduct experiments in a digital environment</li>
+                <li>Replicate real laboratory experience virtually.</li>
             </ol>
-        </div>
+        </article>
         <div class="card">
             <h1>Credits</h1>
             <h2 style="text-decoration: underline;">Developers of Labsim Von MozzaBot</h2>
-            <p>These are the main heads of Labsim Von MozzaBot</p>
+            <p>These are the main people of Labsim Von MozzaBot</p>
             <ol>
-                <li>Ali Mozzabot I...   PFoM...                    Website Developer</li>
-                <li>Eiko...             Right Hand Man(RHM)...     Graphic Designer</li>
-                <li>Whiteshard...       Sub Director...            Game Engine Developer</li>
+                <li><img src="/multimedia/image/director.jpg" alt="Ali MozzaBot I">Ali Mozzabot I...   PFoM...                    Project Manager</li>
+                <li><img src="/multimedia/image/secretary.jpg" alt="Eiko">Eiko...             Right Hand Man(RHM)...     Graphic Designer</li>
+                <li><img src="/multimedia/image/unknown.png" alt="Whiteshard">Whiteshard       Sub Director...            Game Engine Developer</li>
             </ol>
+            
             <h2 style="text-decoration: underline;">Acknowledgements</h2>
             <ol>
-                <li>Ahmad 'Ammar Bin Zainuddin...                     Advisor</li>
+                <li>Ahmad 'Ammar bin Zainuddin...                     Advisor</li>
+                <li>Muhamad Fakhri bin Kamarul Zaman...               Advisor</li>
                 <li>Azmeer bin Arof...                                Presenter</li>
                 <li>People of Maktab Rendah Sains Mara Langkawi...    Supporter</li>
             </ol>
-            <p class="date" id="date" aria-live="polite">Loading date...</p>
         </div>
+        </section>
+        <div class="meta-row">
+        <p class="date" id="date" aria-live="polite">Loading date...</p>
     </div>
+    </main>
 
     <hr style="text-align:left;margin-left:0"> 
     <script src="script.js" defer></script>

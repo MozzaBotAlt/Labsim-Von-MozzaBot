@@ -16,6 +16,45 @@ Usage of this software is for educational purposes and refer to other references
 URL to Labsim:
 - [Finalized](labsim.vercel.app)
 
+## Deployment & Setup
+
+### Local Development
+
+#### Prerequisites
+- Node.js 16+
+- npm or yarn
+
+#### Setup & Run
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+### Vercel Deployment
+
+This project is configured to deploy automatically to Vercel with the following features:
+
+- **Frontend**: Static HTML/CSS/JavaScript served from `/frontend`
+- **Rocket Simulator**: React + Vite app served from `/labsim/others/rocketsimulator/`
+
+#### Environment Variables
+
+Set these in your Vercel project settings:
+- `VITE_GEMINI_API_KEY`: Your Google AI Studio API key (for rocket simulator AI tips)
+
+For more details on rocket simulator setup, see [ROCKET_SIMULATOR_SETUP.md](ROCKET_SIMULATOR_SETUP.md).
+
 ## Bugs?
 Bugs? Any ideas for improvements? Feedback?
 Tell us on:

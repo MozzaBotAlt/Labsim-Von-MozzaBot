@@ -1,0 +1,22 @@
+{
+  "name": "labsim-von-mozzabot",
+  "version": "1.0.0",
+  "description": "IGCSE Based Biology Lab Simulator for Teachers and Students",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "cd frontend/labsim/others/rocketsimulator && npm run dev",
+    "build": "cd frontend/labsim/others/rocketsimulator && npm install && npm run build && cp -r dist ../../../rocketsimulator-dist",
+    "build:rocket": "cd frontend/labsim/others/rocketsimulator && npm install && npm run build",
+    "preview": "cd frontend/labsim/others/rocketsimulator && npm run preview"
+  },
+  "keywords": [
+    "education",
+    "biology",
+    "simulator",
+    "igcse",
+    "laboratory"
+  ],
+  "author": "Long Infinity",
+  "license": "GPL-3.0"
+}

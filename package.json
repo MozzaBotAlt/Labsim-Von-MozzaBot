@@ -3,12 +3,9 @@
   "version": "4.0.0",
   "description": "IGCSE Based Biology Lab Simulator for Teachers and Students",
   "private": true,
-  "type": "module",
+
   "scripts": {
-    "dev": "cd frontend/labsim/others/rocketsimulator && npm run dev",
-    "build": "cd frontend/labsim/others/rocketsimulator && npm install && npm run build && cp -r dist ../../../rocketsimulator-dist",
-    "build:rocket": "cd frontend/labsim/others/rocketsimulator && npm install && npm run build",
-    "preview": "cd frontend/labsim/others/rocketsimulator && npm run preview"
+    "info": "echo 'No build required - all simulators are vanilla HTML/CSS/JavaScript'"
   },
   "keywords": [
     "education",

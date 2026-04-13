@@ -1,13 +1,450 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rocket Simulator</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugar Rocket Simulator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/multimedia/image/images.webp" type="image/x-icon">
+    <style>
+        .simulator-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .step-display {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(0, 255, 247, 0.06);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 247, 0.2);
+        }
+
+        .step-title {
+            font-size: 1.8rem;
+            color: #00fff7;
+            margin: 0;
+            text-shadow: 0 0 10px #00fff780;
+        }
+
+        .step-description {
+            color: #dfeef0;
+            margin: 10px 0 0 0;
+            font-size: 1rem;
+        }
+
+        .controls-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 768px) {
+            .controls-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .control-section {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 247, 0.1);
+        }
+
+        .control-section h3 {
+            color: #00fff7;
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #dfeef0;
+            font-weight: 600;
+        }
+
+        input[type="range"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 8px;
+            background: rgba(0, 255, 247, 0.1);
+            border: 1px solid rgba(0, 255, 247, 0.3);
+            border-radius: 6px;
+            color: #00fff7;
+            font-size: 1rem;
+        }
+
+        input[type="range"] {
+            cursor: pointer;
+        }
+
+        .value-display {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 8px;
+            text-align: center;
+            color: #00fff7;
+            font-weight: 600;
+        }
+
+        .visualization {
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(0, 255, 247, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rocket-preview {
+            font-size: 5rem;
+            margin: 20px 0;
+            filter: drop-shadow(0 0 10px #00fff780);
+        }
+
+        .launch-animation {
+            position: relative;
+            height: 300px;
+            background: linear-gradient(to top, rgba(0, 255, 247, 0.05), transparent);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 247, 0.2);
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .rocket-flying {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            animation: rocketFly 3s ease-in-out forwards;
+        }
+
+        @keyframes rocketFly {
+            0% {
+                bottom: 10%;
+                opacity: 1;
+                transform: translateX(-50%) rotate(0deg);
+            }
+            50% {
+                transform: translateX(-50%) rotate(15deg);
+            }
+            100% {
+                bottom: 90%;
+                opacity: 0;
+                transform: translateX(-50%) rotate(0deg);
+            }
+        }
+
+        .results-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .result-card {
+            background: rgba(0, 255, 247, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #00fff7;
+            text-align: center;
+        }
+
+        .result-label {
+            color: #9feeee;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .result-value {
+            color: #00fff7;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-shadow: 0 0 8px #00fff780;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            background: linear-gradient(90deg, #00fff7, #2c5364);
+            color: #072324;
+            border: 0;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        .btn-small:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 255, 247, 0.2);
+        }
+
+        .btn-small:active {
+            transform: scale(0.98);
+        }
+
+        .warning {
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            color: #fca5a5;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+            display: none;
+        }
+
+        .warning.active {
+            display: block;
+        }
+
+        .success {
+            background: rgba(74, 222, 128, 0.15);
+            border: 1px solid rgba(74, 222, 128, 0.5);
+            color: #86efac;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+            display: none;
+        }
+
+        .success.active {
+            display: block;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: rgba(0, 255, 247, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00fff7, #2c5364);
+            width: 0%;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px #00fff780;
+        }
+
+        .chart-container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid rgba(0, 255, 247, 0.1);
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .safety-warning {
+            background: rgba(239, 68, 68, 0.2);
+            border-left: 4px solid #ef4444;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            color: #fca5a5;
+        }
+
+        .safety-warning strong {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="simulator-container">
+        <div class="back-button">
+            <i class="fa-solid fa-circle-left"></i>
+            <button class="btn" onclick="window.location.href='../index.html'">Back to Simulators</button>
+        </div>
+
+        <div class="step-display">
+            <h1 class="step-title">🚀 Sugar Rocket Simulator</h1>
+            <p class="step-description">Design and test your rocket launch parameters</p>
+        </div>
+
+        <div class="safety-warning">
+            <strong>⚠️ Safety Notice:</strong> This is a virtual simulator. Never attempt actual rocket fuel experiments without proper training and equipment. Always follow local laws and safety guidelines.
+        </div>
+
+        <!-- Main Controls -->
+        <div class="controls-grid">
+            <!-- Design Panel -->
+            <div class="control-section">
+                <h3>🎨 Rocket Design</h3>
+                
+                <div class="form-group">
+                    <label>Nose Cone Type:</label>
+                    <select id="noseType">
+                        <option value="conical">Conical</option>
+                        <option value="ogive">Ogive</option>
+                        <option value="parabolic">Parabolic</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Fin Type:</label>
+                    <select id="finType">
+                        <option value="delta">Delta</option>
+                        <option value="swept">Swept</option>
+                        <option value="trapezoidal">Trapezoidal</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Rocket Mass: <span id="massValue">500</span> g</label>
+                    <input type="range" id="rocketMass" min="300" max="1000" value="500">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="massProgress"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Fuel Amount: <span id="fuelValue">50</span> g</label>
+                    <input type="range" id="fuelAmount" min="20" max="150" value="50">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="fuelProgress"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fuel Mix Panel -->
+            <div class="control-section">
+                <h3>⚗️ Fuel Mixture</h3>
+                
+                <div class="form-group">
+                    <label>KNO₃ Percentage: <span id="knoValue">65</span>%</label>
+                    <input type="range" id="knoPercentage" min="50" max="80" value="65">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="knoProgress"></div>
+                    </div>
+                    <div class="value-display" id="knoStatus">Good Mix</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Sugar Percentage: <span id="sugarValue">35</span>%</label>
+                    <input type="range" id="sugarPercentage" min="20" max="50" value="35">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="sugarProgress"></div>
+                    </div>
+                    <div class="value-display" id="sugarStatus">Good Mix</div>
+                </div>
+
+                <div class="warning" id="mixWarning">
+                    ⚠️ Mixture ratios are not optimal. Adjust for better performance.
+                </div>
+
+                <div class="success" id="mixSuccess">
+                    ✓ Perfect fuel mixture! Maximum efficiency achieved.
+                </div>
+            </div>
+        </div>
+
+        <!-- Heating Control -->
+        <div class="control-section" style="margin: 20px 0;">
+            <h3>🔥 Heating & Ignition</h3>
+            
+            <div class="form-group">
+                <label>Temperature: <span id="tempValue">350</span>°C</label>
+                <input type="range" id="temperature" min="200" max="450" value="350">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="tempProgress"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Burn Time: <span id="burnValue">3</span> seconds</label>
+                <input type="range" id="burnTime" min="1" max="8" value="3">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="burnProgress"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visualization -->
+        <div class="visualization" id="visualization">
+            <div>
+                <div class="rocket-preview" id="rocketEmoji">🚀</div>
+                <p id="designText">Configure rocket parameters to begin</p>
+            </div>
+        </div>
+
+        <!-- Launch Section -->
+        <div style="text-align: center; margin: 30px 0;">
+            <button class="btn" onclick="launchRocket()" style="padding: 15px 40px; font-size: 1.1rem;">
+                <i class="fa-solid fa-play" style="margin-right: 8px;"></i>
+                LAUNCH ROCKET
+            </button>
+        </div>
+
+        <!-- Launch Animation -->
+        <div class="launch-animation" id="launchAnimation" style="display: none;">
+            <div class="rocket-flying">🚀</div>
+        </div>
+
+        <!-- Results -->
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <div class="result-card">
+                <div class="result-label">Max Altitude</div>
+                <div class="result-value" id="maxAltitude">0 m</div>
+            </div>
+            <div class="result-card">
+                <div class="result-label">Max Velocity</div>
+                <div class="result-value" id="maxVelocity">0 m/s</div>
+            </div>
+            <div class="result-card">
+                <div class="result-label">Flight Time</div>
+                <div class="result-value" id="flightTime">0 s</div>
+            </div>
+            <div class="result-card">
+                <div class="result-label">Efficiency</div>
+                <div class="result-value" id="efficiency">0%</div>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn-small" onclick="resetSimulation()">
+                <i class="fa-solid fa-redo" style="margin-right: 5px;"></i>
+                Reset
+            </button>
+            <button class="btn-small" onclick="exportResults()">
+                <i class="fa-solid fa-download" style="margin-right: 5px;"></i>
+                Export Results
+            </button>
+        </div>
+    </div>
+
+    <script src="simulator.js"></script>
+</body>
 </html>
 

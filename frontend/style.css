@@ -272,3 +272,22 @@ nav ul li ol a:hover {
 .tagline {
   opacity: 0.95;
 }
+
+/* Image styling for list items */
+li img {
+  max-width: 32px;
+  max-height: 32px;
+  width: auto;
+  height: auto;
+  margin-right: 12px;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+/* Ensure proper alignment for list items with images */
+li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

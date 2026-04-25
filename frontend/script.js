@@ -1,13 +1,4 @@
-//vercel analytics
-/*import { inject } from "@vercel/analytics";
-
-inject();
-*/
 // Add fading effects when switching tabs
-
-console.info(
-  "Copyright (C) 2025  Ali Mozzabot I, This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions. ",
-);
 
 // Animate cards and buttons on load
 const cards = document.querySelectorAll(".card");
@@ -67,24 +58,7 @@ icons.forEach((icon) => {
 if (!document.getElementById("ripple-style")) {
   const rippleStyle = document.createElement("style");
   rippleStyle.id = "ripple-style";
-  rippleStyle.innerHTML = `
-        .ripple-effect {
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background: rgba(0,255,247,0.4);
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%) scale(0.5);
-            animation: ripple-anim 0.6s linear;
-            z-index: 2;
-        }
-        @keyframes ripple-anim {
-            0% { opacity: 0.7; transform: translate(-50%, -50%) scale(0.5); }
-            80% { opacity: 0.4; transform: translate(-50%, -50%) scale(2.2); }
-            100% { opacity: 0; transform: translate(-50%, -50%) scale(2.8); }
-        }
-        `;
+  rippleStyle.innerHTML = `.ripple-effect{position:absolute;width:40px;height:40px;background:rgba(0,255,247,0.4);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%)scale(0.5);animation:ripple-anim 0.6s linear;z-index:2}@keyframes ripple-anim{0%{opacity:0.7;transform:translate(-50%,-50%)scale(0.5)}80%{opacity:0.4;transform:translate(-50%,-50%)scale(2.2)}100%{opacity:0;transform:translate(-50%,-50%)scale(2.8)}}`;
   document.head.appendChild(rippleStyle);
 }
 // Assume tabs are <a> elements inside nav, and tab contents have class "tab-content"
@@ -137,11 +111,8 @@ fetch(baseurl, {
   method: "GET",
 })
   .then((response) => {
-    // Log status code and status text
-    if (response.status == 200) {
-      return;
-    } else {
-      console.warn(`Status Code: 501, Internal Server Error`);
+    if (response.status !== 200) {
+      console.error(`API unavailable: Status ${response.status}`);
     }
   })
   .catch((error) => {

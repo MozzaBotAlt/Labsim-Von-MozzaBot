@@ -1,5 +1,3 @@
-console.info("Copyright (C) 2025  Ali Mozzabot I, This program comes with ABSOLUTELY NO WARRANTY. This is free software, and you are welcome to redistribute it under certain conditions. ")
-
 // Add fading effects when switching tabs
         // Animate cards and buttons on load
         const cards = document.querySelectorAll('.card');

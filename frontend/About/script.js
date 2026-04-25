@@ -126,7 +126,6 @@ console.info("Copyright (C) 2025  Ali Mozzabot I, This program comes with ABSOLU
                 }
                 const data = await response.json();
                 const serverData = data;
-                console.log('Data from server:', serverData);
             } catch (error) { console.error(error); }
         }
 
@@ -135,14 +134,12 @@ console.info("Copyright (C) 2025  Ali Mozzabot I, This program comes with ABSOLU
             try {
                 const res = await fetch(baseurl + 'api/date');
                 const data = await res.json();
-                console.log(data);
                 const date = new Date(data.date);
                 if (isNaN(date)) {
                     document.getElementById('date').textContent = 'Invalid date received';
                 } else {
                     document.getElementById('date').textContent = date.toString();
                 }
-                console.log(date)
             } catch (error) { console.error(error); }
         }
         fetchDate();

@@ -45,15 +45,15 @@
           class="card"
           role="button"
           tabindex="0"
-          onclick="location.href='./labsim/index.html'"
-          onkeypress="if(event.key==='Enter') location.href='./labsim/index.html'"
+          onclick="goToSite();"
+          onkeypress="if(event.key==='Enter') goToSite();"
         >
           <i class="fa-solid fa-flask-vial" aria-hidden="true"></i>
           <h2>To LabSim</h2>
           <p class="card-desc">Jump into the sims.</p>
           <button
             class="btn"
-            onclick="window.location.href='./labsim/index.html'"
+            onclick="goToSite();"
           >
             To Lab!
           </button>
@@ -108,9 +108,6 @@
         <p style="margin-top: 10px;">Previous versions available <span><a href="http://github.com/MozzaBotAlt/LVM">here!</a></span></p>
       </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
-    <canvas id="confetti-canvas"></canvas>
     
     <script src="script.js" defer></script>
     <noscript><meta http-equiv="refresh" content="0;url=error.html"></noscript>

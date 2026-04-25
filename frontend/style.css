@@ -291,3 +291,66 @@ li {
   align-items: center;
   gap: 8px;
 }
+
+/* Developer Cards Grid */
+.developers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.developer-card {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 247, 0.08),
+    rgba(44, 83, 100, 0.08)
+  );
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.developer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 255, 247, 0.06);
+}
+
+.developer-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid rgba(0, 255, 247, 0.2);
+  transition: border-color 0.2s ease;
+}
+
+.developer-card:hover .developer-image {
+  border-color: rgba(0, 255, 247, 0.4);
+}
+
+.developer-card h3 {
+  margin: 4px 0;
+  font-size: 1.1rem;
+  color: #00fff7;
+}
+
+.developer-card .role {
+  font-size: 0.9rem;
+  color: #a8e6e6;
+  margin: 0;
+  font-style: italic;
+}
+
+.developer-card .title {
+  font-size: 0.95rem;
+  color: #c6ffff;
+  margin: 0;
+  font-weight: 600;
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./style.css">
     <title>About Labsim Von MozzaBot</title>
     <link rel="icon" href="/multimedia/image/images.webp" type="image/x-icon">
     <style>
@@ -19,43 +20,26 @@
     </style>
 </head>
 <body>
-    <!---<header>
-        <nav class="nav-container">
-            <a href="/index.html"><img src="../multimedia/images.webp" alt="Home" style="width: 50px; min-height: 50px; margin: 10px 20px 10px ;"></a>
-            <ul class="nav-ulist">
-                <li class="nav-list"><a style="color: black; text-shadow: none; border: none;" href="../About/index.html">About</a></li>
-                <li class="nav-list"><a style="color: black; text-shadow: none; border: none;" href="../contact/index.html">Contact</a></li>
-                <li class="nav-list"><a style="color: black; text-shadow: none; border: none;" href="../help/index.html">Help</a></li>
-                <li class="nav-list"><a style="color: black; text-shadow: none; border: none;" href="../Labsim/index.html">Labsim Menu</a></li>
-            </ul>
-        </nav>
-    </header>
-    <hr>
--->
+    <!-- Header -->
     <header class="site-header">
-      <div class="header-inner">
+    <div class="header-inner">
         <h1>About Labsim Von MozzaBot</h1>
-      </div>
+    </div>
     </header>
 
+    <!-- Content -->
     <main class="container" role="main">
-      <section class="cards" aria-label="Main navigation">
+    <section class="cards" aria-label="Main navigation">
         <article
-          class="card"
-          role="button"
-          tabindex="0"
-          onclick="location.href='../index.html'"
-          onkeypress="if(event.key==='Enter') location.href='../index.html'"
-        >
-          <i style="margin: 10px 10px 10px;" class="fa-solid fa-house"></i>
-          <h2>To LabSim</h2>
-          <p class="card-desc">Home</p>
-          <button
-            class="btn"
-            onclick="window.location.href='../index.html'"
-          >
-            Home
-          </button>
+        class="card"
+        role="button"
+        tabindex="0"
+        onclick="location.href='../index.html'"
+        onkeypress="if(event.key==='Enter') location.href='../index.html'">
+        <i style="margin: 10px 10px 10px;" class="fa-solid fa-house"></i>
+        <h2>To LabSim</h2>
+        <p class="card-desc">Home</p>
+        <button class="btn" onclick="window.location.href='../index.html'">Home</button>
         </article>
 
         <article
@@ -80,13 +64,17 @@
             <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
             <h2>About Labsim</h2>
             <p>Labsim was created by three developers from MRSM Langkawi. It is created to help users replicate experiment seamlessly. This simulator is created through multiple platforms to allow students replicate lab experiments accurately. Labsim is using IGCSE Biology 2026 syllabus as reference. Biology teachers can also use this platform in class as study aids to help students comprehend the topic more or if the teacher has no materials or apparatuses available.</p>
-            <h3 style="text-decoration: underline;">Objectives</h3>
+            <h3 style="text-decoration: underline;">Objectives</h3>            
             <ol>
                 <li>Develop an interactive, user-friendly, and scientifically accurate simulator.</li>
                 <li>Allow students to conduct experiments in a digital environment</li>
                 <li>Replicate real laboratory experience virtually.</li>
             </ol>
+            <div class="developer-card">
+                <img src="/multimedia/image/postersem.svg" alt="">
+            </div>
         </article>
+
         <div class="card">
             <h1>Credits</h1>
             <h2 style="text-decoration: underline;">Developers of Labsim Von MozzaBot</h2>
@@ -123,7 +111,9 @@
         </section>
         <div class="meta-row">
         <p class="date" id="date" aria-live="polite">Loading date...</p>
-        <button class="btn" style="margin: 20px 20px;" onclick="location.href='./survey.html'" aria-label="Take Survey">Take Survey</button>
+        <div class="gform-button-container">
+            <button class="btn" style="margin: 20px 20px;" onclick="location.href='./survey.html'" aria-label="Take Survey">Take Survey</button>
+        </div>
     </div>
     </main>
 
@@ -131,10 +121,10 @@
     <script src="script.js" defer></script>
     <noscript><meta http-equiv="refresh" content="0;url=/error.html"></noscript>
     <footer class="site-footer">
-      <div class="footer-inner">
+    <div class="footer-inner">
         <p>&copy; 2025 Labsim Von MozzaBot.</p>
         <p>GNU GPL License v3.0 — Developed by Long Infinity</p>
-      </div>
+    </div>
     </footer>
 </body>
 </html>

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nuclear Power Simulator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- LEFT PANE: MAIN VISUALIZATION -->
+    <div class="main-pane">
+      <!-- Header -->
+      <header class="header">
+        <div>
+          <h1 class="title">⚡ Nuclear Power Simulator</h1>
+          <p class="subtitle">Cambridge IGCSE Physics (2025 Syllabus)</p>
+        </div>
+        <div class="status-badges">
+          <div class="badge temperature-badge" id="tempBadge">
+            🌡️ 25 °C
+          </div>
+          <div class="badge power-badge" id="powerBadge">
+            ⚡ 0 MW
+          </div>
+        </div>
+      </header>
+
+      <!-- Tab Navigation -->
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="plant">Macro View: Plant</button>
+        <button class="tab-btn" data-tab="fission">Micro View: Fission</button>
+        <button class="tab-btn" data-tab="energy">Energy Pathways</button>
+      </div>
+
+      <!-- Main Content Area -->
+      <main class="content">
+        <!-- VIEW 1: PLANT DIAGRAM -->
+        <div id="plant" class="view active">
+          <div class="panel">
+            <!-- Reactor Core -->
+            <div class="component reactor-group">
+              <div class="component-label">Reactor Vessel</div>
+              <div class="reactor">
+                <div class="reactor-interior" id="reactorInterior">
+                  <div class="fuel-rods">
+                    <div class="rod-group">
+                      <div class="fuel-rod"></div>
+                      <div class="control-rod" id="controlRod1"></div>
+                    </div>
+                    <div class="rod-group">
+                      <div class="fuel-rod"></div>
+                      <div class="control-rod" id="controlRod2"></div>
+                    </div>
+                    <div class="rod-group">
+                      <div class="fuel-rod"></div>
+                      <div class="control-rod" id="controlRod3"></div>
+                    </div>
+                    <div class="rod-group">
+                      <div class="fuel-rod"></div>
+                      <div class="control-rod" id="controlRod4"></div>
+                    </div>
+                    <div class="rod-group">
+                      <div class="fuel-rod"></div>
+                      <div class="control-rod" id="controlRod5"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Heat Exchanger -->
+            <div class="component exchanger-group">
+              <div class="component-label">Heat Exchanger</div>
+              <div class="pipe">
+                <div class="steam-particles" id="steamParticles"></div>
+              </div>
+            </div>
+
+            <!-- Turbine -->
+            <div class="component turbine-group">
+              <div class="component-label">Turbine</div>
+              <div class="turbine" id="turbine">
+                <div class="turbine-blade"></div>
+                <div class="turbine-blade" style="transform: rotate(120deg)"></div>
+                <div class="turbine-blade" style="transform: rotate(240deg)"></div>
+              </div>
+              <p class="turbine-speed" id="turbineSpeed">0 RPM</p>
+            </div>
+
+            <!-- Generator -->
+            <div class="component generator-group">
+              <div class="component-label">Generator</div>
+              <div class="generator" id="generator"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIEW 2: FISSION DIAGRAM -->
+        <div id="fission" class="view">
+          <div class="panel">
+            <h2 class="view-title">Nuclear Fission Chain Reaction</h2>
+            <div class="fission-diagram">
+              <div class="fission-particle" id="fission1">
+                <div class="nucleus"></div>
+                <div class="neutron n1"></div>
+                <div class="neutron n2"></div>
+              </div>
+              <div class="arrow">→</div>
+              <div class="fission-particle" id="fission2">
+                <div class="nucleus"></div>
+                <div class="neutron n1"></div>
+                <div class="neutron n2"></div>
+              </div>
+              <div class="arrow">→</div>
+              <div class="fission-particle" id="fission3">
+                <div class="nucleus"></div>
+                <div class="neutron n1"></div>
+                <div class="neutron n2"></div>
+              </div>
+            </div>
+            <p class="fission-text">One neutron strikes a U-235 nucleus → nucleus splits → 2-3 neutrons released → chain reaction continues</p>
+          </div>
+        </div>
+
+        <!-- VIEW 3: ENERGY PATHWAYS -->
+        <div id="energy" class="view">
+          <div class="panel">
+            <h2 class="view-title">Energy Transformation Pathway</h2>
+            <div class="energy-flow">
+              <div class="energy-stage">
+                <div class="energy-box">Nuclear<br>Energy</div>
+              </div>
+              <div class="energy-arrow">→</div>
+              <div class="energy-stage">
+                <div class="energy-box">Thermal<br>Energy</div>
+              </div>
+              <div class="energy-arrow">→</div>
+              <div class="energy-stage">
+                <div class="energy-box">Kinetic<br>Energy</div>
+              </div>
+              <div class="energy-arrow">→</div>
+              <div class="energy-stage">
+                <div class="energy-box">Electrical<br>Energy</div>
+              </div>
+            </div>
+            <div class="efficiency-stats">
+              <div class="stat">
+                <span class="stat-label">Thermal Efficiency:</span>
+                <span class="stat-value" id="efficiency">33%</span>
+              </div>
+              <div class="stat">
+                <span class="stat-label">Heat Loss:</span>
+                <span class="stat-value" id="heatLoss">67%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- RIGHT PANE: CONTROLS -->
+    <aside class="control-pane">
+      <div class="control-section">
+        <h3 class="control-title">Reactor Control</h3>
+        
+        <!-- Start/Stop Button -->
+        <div class="control-item">
+          <button id="startBtn" class="btn btn-primary">▶ START</button>
+          <button id="stopBtn" class="btn btn-danger" style="display: none;">⏹ STOP</button>
+        </div>
+
+        <!-- Control Rod Slider -->
+        <div class="control-item">
+          <label class="control-label">Control Rods Position</label>
+          <input 
+            type="range" 
+            id="controlSlider" 
+            min="0" 
+            max="100" 
+            value="0" 
+            class="slider"
+            disabled
+          />
+          <div class="slider-labels">
+            <span>Inserted (Safe)</span>
+            <span id="rodValue">0%</span>
+            <span>Withdrawn (Max Power)</span>
+          </div>
+        </div>
+
+        <!-- SCRAM Button -->
+        <div class="control-item">
+          <button id="scramBtn" class="btn btn-warning">⚠️ SCRAM</button>
+        </div>
+      </div>
+
+      <!-- Status Display -->
+      <div class="status-section">
+        <h3 class="control-title">System Status</h3>
+        
+        <div class="status-item">
+          <span class="status-label">Reactor Status:</span>
+          <span class="status-value" id="reactorStatus">Offline</span>
+        </div>
+
+        <div class="status-item">
+          <span class="status-label">Temperature:</span>
+          <span class="status-value" id="tempDisplay">25 °C</span>
+        </div>
+
+        <div class="status-item">
+          <span class="status-label">Steam Pressure:</span>
+          <span class="status-value" id="pressureDisplay">0 bar</span>
+        </div>
+
+        <div class="status-item">
+          <span class="status-label">Turbine Speed:</span>
+          <span class="status-value" id="speedDisplay">0 RPM</span>
+        </div>
+
+        <div class="status-item">
+          <span class="status-label">Power Output:</span>
+          <span class="status-value" id="powerDisplay">0 MW</span>
+        </div>
+
+        <div class="alert-box" id="alertBox" style="display: none;"></div>
+      </div>
+
+      <!-- Info Section -->
+      <div class="info-section">
+        <h3 class="control-title">ℹ️ Info</h3>
+        <p class="info-text">
+          This simulator demonstrates the basic principles of nuclear power generation used in fission reactors worldwide.
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

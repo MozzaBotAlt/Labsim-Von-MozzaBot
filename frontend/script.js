@@ -139,3 +139,7 @@ fetchDate();
 function goToSite() {
   window.location.href = "https://lvm-6iu5.onrender.com/";
 }
+
+function goToHome(){
+  window.location.href = "https://lvm-psi.vercel.app/";
+}

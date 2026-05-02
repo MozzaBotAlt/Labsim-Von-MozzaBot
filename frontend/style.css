@@ -167,41 +167,7 @@ button:active,
     grid-template-columns: 1fr;
   }
 }
-/*
-nav {
-    background: rgba(44,83,100,0.8);
-    padding: 18px 0;
-    border-radius: 0 0 24px 24px;
-    box-shadow: 0 2px 16px #00fff740;
-    margin-bottom: 50px;
-    backdrop-filter: blur(8px);
-    align-items: center;
-}
 
-nav ul ol {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
-
-nav ul li a ol {
-    color: #00fff7;
-    font-weight: 600;
-    font-size: 20px;
-    padding: 10px 20px;
-    text-align: left;
-    border-radius: 8px;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-}
-
-nav ul li ol a:hover {
-    background: rgba(0,255,247,0.12);
-    color: #fff;
-    box-shadow: 0 0 8px #00fff780;
-    text-align: left;
-}
-*/
 .container-gform {
   background: rgba(44, 83, 100, 0.6);
   border-radius: 30px;

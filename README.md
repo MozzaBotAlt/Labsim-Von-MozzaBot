@@ -8,8 +8,8 @@
 
 # Info
 
-Labsim Von MozzaBot was created by Long Infinity, Lithium class for MozzaBot Development Division(Education) and MRSM Langkawi(Biology Unit) for ScienceShine.
-Usage of this software is for educational purposes and refer to other references for further understanding and information. It uses IGCSE Biology Textbook as reference.
+Labsim Von MozzaBot was created by Long Infinity, Lithium class for MozzaBot Development Division(Education) and MRSM Langkawi(Biology Unit) for ScienceShine and other compettions.
+Usage of this software is for educational purposes and refer to other references for further understanding and information.
 
 ## URL to Simulator
 URL to Labsim:

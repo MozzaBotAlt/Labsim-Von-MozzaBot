@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive IGCSE Chemistry Reaction Rate Simulation. Explore how temperature, concentration, and techniques affect reaction rates. Perfect for students preparing for the 2026 syllabus.">
+    <title>LVM RoR</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/image/images.webp" type="image/x-icon">
+</head>
+<body>
+    <div class="container" style="padding: 1.5rem;">
+        <!-- Header -->
+        <header>
+            <div>
+                <h1>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 4h12v7H6z"></path>
+                        <path d="M9 11h6v8H9z"></path>
+                        <path d="M12 19v3"></path>
+                    </svg>
+                    RoR LVM Simulator
+                </h1>
+            </div>
+            <div class="method-buttons">
+                <button class="method-btn active" data-method="gas">Gas</button>
+                <button class="method-btn" data-method="mass">Mass</button>
+                <button class="method-btn" data-method="cross">Obj. Obscured</button>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Sidebar Controls -->
+            <aside>
+                <div class="control-buttons">
+                    <button class="btn btn-play" id="startBtn">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        Start
+                    </button>
+                    <button class="btn btn-reset" id="resetBtn">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path>
+                            <path d="M21 3v5h-5"></path>
+                            <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path>
+                            <path d="M3 21v-5h5"></path>
+                        </svg>
+                        Reset
+                    </button>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="section-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <path d="M12 1v6m0 6v6"></path>
+                            <path d="M4.22 4.22l4.24 4.24m5.08 5.08l4.24 4.24"></path>
+                            <path d="M1 12h6m6 0h6"></path>
+                            <path d="M4.22 19.78l4.24-4.24m5.08-5.08l4.24-4.24"></path>
+                        </svg>
+                        Parameters
+                    </h3>
+
+                    <div class="space-y-1">
+                        <label>Temperature (°C): <span id="tempValue">25</span></label>
+                        <input type="range" id="tempSlider" min="20" max="60" value="25" step="1">
+                    </div>
+
+                    <div class="space-y-1">
+                        <label>Acid Conc. (mol/dm³): <span id="concValue">1.0</span></label>
+                        <input type="range" id="concSlider" min="0.5" max="3" value="1" step="0.5">
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="section-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2v6m0 4v6M4 8h4m4 0h4m-8 8h4m4 0h4"></path>
+                            <circle cx="12" cy="4" r="2"></circle>
+                            <circle cx="12" cy="16" r="2"></circle>
+                        </svg>
+                        Techniques
+                    </h3>
+
+                    <div class="space-y-1">
+                        <label>Start Method</label>
+                        <select id="startMethod">
+                            <option value="pour">Pouring (Gas Loss Risk)</option>
+                            <option value="invert">Invert Internal Tube</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-1">
+                        <label>Heat Location</label>
+                        <select id="heatLocation">
+                            <option value="none">No localized heating</option>
+                            <option value="base">Base of Tube</option>
+                            <option value="middle">Middle of Tube</option>
+                            <option value="top">Top of Tube</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-1" id="syringeContainer" style="display: block;">
+                        <label>Syringe Type</label>
+                        <select id="syringe">
+                            <option value="100_glass">100cm³ Glass (Smooth)</option>
+                            <option value="50_plastic">50cm³ Plastic (Friction)</option>
+                        </select>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Display Area -->
+            <main>
+                <div class="grid-2">
+                    <!-- Apparatus Diagram -->
+                    <div class="card">
+                        <h2>Apparatus Setup</h2>
+                        <div class="diagram-container" id="diagramContainer"></div>
+                    </div>
+
+                    <!-- Chart -->
+                    <div class="card">
+                        <h2>Live Data Graph</h2>
+                        <div class="chart-container">
+                            <canvas id="chartCanvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics -->
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h4>Current Time</h4>
+                        <p class="stat-value" id="timeDisplay">0s</p>
+                    </div>
+                    <div class="stat-box blue">
+                        <h4>Reading</h4>
+                        <p class="stat-value" id="readingDisplay">0</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>Status</h4>
+                        <p class="stat-value" id="statusDisplay">Ready</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <noscript><meta http-equiv="refresh" content="0;url=/error.html"/></noscript>
+</body>
+</html>
+

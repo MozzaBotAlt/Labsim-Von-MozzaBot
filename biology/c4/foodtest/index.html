@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BioLab Simulator - Food Testing</title>
+  <meta name="description" content="Perform standard food tests (Benedict's, Iodine, Biuret, Ethanol) in a safe, virtual environment with the BioLab Simulator. Follow step-by-step procedures and record your observations in the lab notebook.">
+  <title>LVM C4: Food Test</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -45,8 +46,8 @@
       <div class="header-left">
         <div class="header-icon">🧪</div>
         <div>
-          <h1 class="app-title">BioLab Simulator</h1>
-          <p class="app-subtitle">IGCSE Biology 2026</p>
+          <h1 class="app-title">Labsim Von MozzaBot</h1>
+          <p class="app-subtitle">Food Test</p>
         </div>
       </div>
       <div class="header-right">
@@ -66,10 +67,16 @@
           <div class="experiment-list" id="experimentList"></div>
         </div>
 
-        <div class="section" id="procedureSection" style="display: none;">
-          <h3 class="section-title">Procedure</h3>
-          <div class="procedure-box">
-            <ol class="procedure-steps" id="procedureSteps"></ol>
+        <!-- Lab Notebook moved to sidebar -->
+        <div class="notebook-section">
+          <div class="notebook-header">
+            <h3>Lab Notebook</h3>
+            <span class="time-display" id="timeDisplay"></span>
+          </div>
+          <div class="notebook-content" id="notebookContent">
+            <div class="notebook-placeholder">
+              <p>Actions will be recorded here.</p>
+            </div>
           </div>
         </div>
       </aside>
@@ -123,16 +130,11 @@
             </div>
           </div>
 
-          <!-- Right: Lab Notebook -->
-          <div class="notebook-section">
-            <div class="notebook-header">
-              <h3>Lab Notebook</h3>
-              <span class="time-display" id="timeDisplay"></span>
-            </div>
-            <div class="notebook-content" id="notebookContent">
-              <div class="notebook-placeholder">
-                <p>Actions will be recorded here.</p>
-              </div>
+          <!-- Right: Procedure -->
+          <div class="section" id="procedureSection" style="display: none;">
+            <h3 class="section-title">Procedure</h3>
+            <div class="procedure-box">
+              <ol class="procedure-steps" id="procedureSteps"></ol>
             </div>
           </div>
         </div>
@@ -142,5 +144,6 @@
 
   <script src="data.js"></script>
   <script src="script.js"></script>
+  <noscript><meta http-equiv="refresh" content="0;url=/error.html"/></noscript>
 </body>
 </html>

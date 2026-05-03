@@ -579,8 +579,7 @@ body {
   height: 100%;
   border-radius: 0 0 50% 50%;
   border: 3px solid var(--border);
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
-  box-shadow: inset 2px 0 4px rgba(255, 255, 255, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: transparent;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -644,7 +643,7 @@ body {
   left: -8px;
   right: -8px;
   height: 16px;
-  background: #f3f4f6;
+  background: transparent;
   border: 2px solid var(--border);
   border-radius: 50%;
   z-index: 10;

@@ -3,7 +3,7 @@ const EXPERIMENTS = {
   benedicts: {
     id: 'benedicts',
     name: "Benedict's Test",
-    description: "Test for reducing sugars (e.g., glucose). Requires heat.",
+    description: "Test for reducing sugars. Requires heat.",
     reagents: ['benedicts'],
     requiresHeat: true,
     requiresWaterBath: true,
@@ -59,26 +59,107 @@ const EXPERIMENTS = {
       "Add 2cm³ of distilled water",
       "Observe formation of white emulsion"
     ]
+  },
+  dcpip: {
+    id: 'dcpip',
+    name: "DCPIP Test",
+    description: "Test for vitamin C (ascorbic acid).",
+    reagents: ['dcpip'],
+    requiresHeat: false,
+    requiresWaterBath: false,
+    targetColor: '#3b82f6',
+    steps: [
+      "Add 2cm³ of food sample to a test tube",
+      "Add 2cm³ of DCPIP solution",
+      "Observe color change (Blue → Colorless)"
+    ]
   }
 };
 
 // Reagent definitions
 const REAGENTS = {
   // Samples
-  sample_glucose: { id: 'sample_glucose', label: 'Glucose (High)', color: 'transparent', category: 'sample' },
-  sample_glucose_low: { id: 'sample_glucose_low', label: 'Glucose (Low)', color: 'transparent', category: 'sample' },
-  sample_starch: { id: 'sample_starch', label: 'Starch', color: '#fef3c7', category: 'sample' },
-  sample_protein: { id: 'sample_protein', label: 'Protein', color: '#fde68a', category: 'sample' },
-  sample_lipid: { id: 'sample_lipid', label: 'Lipid', color: '#fcd34d', category: 'sample' },
-  sample_water: { id: 'sample_water', label: 'Water', color: '#dbeafe', category: 'sample' },
+  sample_glucose: {
+    id: "sample_glucose",
+    label: "Glucose (High)",
+    color: "brown",
+    category: "sample",
+  },
+  sample_glucose_low: {
+    id: "sample_glucose_low",
+    label: "Glucose (Low)",
+    color: "#0D98BA",
+    category: "sample",
+  },
+  sample_starch: {
+    id: "sample_starch",
+    label: "Starch",
+    color: "#fef3c7",
+    category: "sample",
+  },
+  sample_protein: {
+    id: "sample_protein",
+    label: "Protein",
+    color: "#fde68a",
+    category: "sample",
+  },
+  sample_lipid: {
+    id: "sample_lipid",
+    label: "Lipid",
+    color: "#fcd34d",
+    category: "sample",
+  },
+  sample_water: {
+    id: "sample_water",
+    label: "Water",
+    color: "#dbeafe",
+    category: "sample",
+  },
+  sample_vitamin_c:{
+    id: "sample_vitamin_c",
+    label: "Vitamin C",
+    color: "#34d399",
+    category: "sample",
+  },
 
   // Reagent chemicals
-  benedicts: { id: 'benedicts', label: "Benedict's", color: '#3b82f6', category: 'reagent' },
-  iodine: { id: 'iodine', label: 'Iodine', color: '#b45309', category: 'reagent' },
-  biuretA: { id: 'biuretA', label: 'Biuret A', color: '#f3f4f6', category: 'reagent' },
-  biuretB: { id: 'biuretB', label: 'Biuret B', color: '#60a5fa', category: 'reagent' },
-  ethanol: { id: 'ethanol', label: 'Ethanol', color: '#f3f4f6', category: 'reagent' },
-  water: { id: 'water', label: 'Water', color: '#dbeafe', category: 'reagent' }
+  benedicts: {
+    id: "benedicts",
+    label: "Benedict's",
+    color: "#3b82f6",
+    category: "reagent",
+  },
+  iodine: {
+    id: "iodine",
+    label: "Iodine",
+    color: "#b45309",
+    category: "reagent",
+  },
+  biuretA: {
+    id: "biuretA",
+    label: "Biuret A",
+    color: "#f3f4f6",
+    category: "reagent",
+  },
+  biuretB: {
+    id: "biuretB",
+    label: "Biuret B",
+    color: "#60a5fa",
+    category: "reagent",
+  },
+  ethanol: {
+    id: "ethanol",
+    label: "Ethanol",
+    color: "#f3f4f6",
+    category: "reagent",
+  },
+  dcpip: {
+    id: "dcpip",
+    label: "DCPIP",
+    color: "#3b82f6",
+    category: "reagent",
+  },
+  water: { id: "water", label: "Water", color: "#dbeafe", category: "reagent" },
 };
 
 // Color sequences for reactions

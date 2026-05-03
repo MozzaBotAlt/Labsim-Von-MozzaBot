@@ -1,6 +1,5 @@
 <h1 align="center">Labsim Von MozzaBot</h1>
 
-
 <div align="center">
   <strong>Educational Laboratory Simulator for IGCSE Students</strong>
 </div>
@@ -18,14 +17,14 @@ URL to Labsim:
 ## Bugs?
 Bugs? Any ideas for improvements? Feedback?
 Tell us on:
-1. 231046@langkawi.mrsm.edu.my
-2. [This Survey](https://tinyurl.com/lvmfeedbacksurvey)
+1. [This Survey](https://tinyurl.com/lvmfeedbacksurvey) or;
+2. [For faster response](https://github.com/MozzaBotAlt/LVM/blob/main/.github/ISSUE_TEMPLATE/bug-report-sytem.md)
 
 ## Credits and Acknowledgements
-THe backbones of LVM
+The backbones of LVM
 
 Credits:
-1. Ali Mozzabot I... Team Principal...            Website Developer...      [Github](https://github.com/RaspberryPiNArduinoUser)
+1. Ali Mozzabot I... Team Principal...            Website Developer...      [Github](https://github.com/AliMBotI)
 2. Eiko...             Right Hand Man(RHM)...     Graphic Designer...       [Github](https://github.com/zhafryanir)
 
 ## Achnowledgements:
